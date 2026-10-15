@@ -1,181 +1,258 @@
-### Solution 3. Calculate 3A-2B
 
-First multiply A by 3.
+# Exercise 3. When Can Matrices Be Multiplied?
 
-$$
-3A=
-\begin{pmatrix}3&6\\-3&9\end{pmatrix}
-$$
+## Question
 
-Next multiply B by 2.
+The matrix sizes are:
 
 $$
-2B=
-\begin{pmatrix}8&-4\\0&10\end{pmatrix}
-$$
-
-Now subtract.
-
-$$
-3A-2B=
-\begin{pmatrix}
-3-8&6-(-4)\\
--3-0&9-10
-\end{pmatrix}
-$$
-
-$$
-\boxed{
-3A-2B=
-\begin{pmatrix}-5&10\\-3&-1\end{pmatrix}
-}
-$$
-
-### Explanation
-
-Matrix addition requires equal dimensions because corresponding entries must exist in both matrices.
-
-Both A and B are 2×2, so addition and subtraction are possible.
-
-**Verification:**
-
-$$
-3A-2B=3(A-B)+B
-$$
-
-$$
-=3\begin{pmatrix}-3&4\\-1&-2\end{pmatrix}
-+\begin{pmatrix}4&-2\\0&5\end{pmatrix}
-$$
-
-$$
-=\begin{pmatrix}-5&10\\-3&-1\end{pmatrix}
-$$
-
-The result is correct.
-
----
-
-## Exercise 3. When Can Matrices Be Multiplied?
-
-### Question
-
-Given matrix sizes:
-
-$$
-A_{2\times3},\quad
-B_{3\times4},\quad
-C_{4\times2},\quad
+A_{2\times3},\qquad
+B_{3\times4},\qquad
+C_{4\times2},\qquad
 D_{2\times2}
 $$
 
-Determine whether the following products are defined:
+For the products
 
 $$
 AB,\ BA,\ BC,\ CB,\ AC,\ CA,\ AD,\ DA
 $$
 
-### Solution
+determine whether they are defined.
 
-**Multiplication Rule:**
+If so, state the size of the result.
 
-For two matrices
+Justify each decision using the dimension compatibility condition.
 
-$$
-X_{m\times n},\quad Y_{n\times p}
-$$
+---
 
-multiplication is possible when the inner dimensions are equal.
+## Multiplication Rule
 
-The result has dimensions:
+Two matrices can be multiplied only when the number of columns of the first matrix equals the number of rows of the second matrix.
 
-$$
-XY_{m\times p}
-$$
-
-### 1. AB
+The general rule is:
 
 $$
-(2\times3)(3\times4)
+(m\times n)(n\times p)=m\times p
 $$
 
-The inner dimensions are equal.
+The inner dimensions must be equal.
+
+The outer dimensions determine the size of the resulting matrix.
+
+---
+
+## Solution 1. Product AB
+
+Matrix A has size 2×3.
+
+Matrix B has size 3×4.
+
+$$
+AB=(2\times3)(3\times4)
+$$
+
+The inner dimensions are both 3.
+
+$$
+3=3
+$$
+
+Therefore, multiplication is possible.
+
+**Final Answer:**
 
 $$
 \boxed{AB:2\times4}
 $$
 
-### 2. BA
+---
+
+## Solution 2. Product BA
+
+Matrix B has size 3×4.
+
+Matrix A has size 2×3.
 
 $$
-(3\times4)(2\times3)
+BA=(3\times4)(2\times3)
 $$
 
-Since $4\neq2$, multiplication is not defined.
-
-### 3. BC
+The inner dimensions are 4 and 2.
 
 $$
-(3\times4)(4\times2)
+4\neq2
 $$
 
-The inner dimensions match.
+Therefore, multiplication is not possible.
+
+**Final Answer:**
+
+$$
+\boxed{BA:\text{Undefined}}
+$$
+
+---
+
+## Solution 3. Product BC
+
+Matrix B has size 3×4.
+
+Matrix C has size 4×2.
+
+$$
+BC=(3\times4)(4\times2)
+$$
+
+The inner dimensions are both 4.
+
+$$
+4=4
+$$
+
+Therefore, multiplication is possible.
+
+**Final Answer:**
 
 $$
 \boxed{BC:3\times2}
 $$
 
-### 4. CB
+---
+
+## Solution 4. Product CB
+
+Matrix C has size 4×2.
+
+Matrix B has size 3×4.
 
 $$
-(4\times2)(3\times4)
+CB=(4\times2)(3\times4)
 $$
 
-Since $2\neq3$, multiplication is not defined.
-
-### 5. AC
+The inner dimensions are 2 and 3.
 
 $$
-(2\times3)(4\times2)
+2\neq3
 $$
 
-Since $3\neq4$, multiplication is not defined.
+Therefore, multiplication is not possible.
 
-### 6. CA
+**Final Answer:**
 
 $$
-(4\times2)(2\times3)
+\boxed{CB:\text{Undefined}}
 $$
 
-The inner dimensions match.
+---
+
+## Solution 5. Product AC
+
+Matrix A has size 2×3.
+
+Matrix C has size 4×2.
+
+$$
+AC=(2\times3)(4\times2)
+$$
+
+The inner dimensions are 3 and 4.
+
+$$
+3\neq4
+$$
+
+Therefore, multiplication is not possible.
+
+**Final Answer:**
+
+$$
+\boxed{AC:\text{Undefined}}
+$$
+
+---
+
+## Solution 6. Product CA
+
+Matrix C has size 4×2.
+
+Matrix A has size 2×3.
+
+$$
+CA=(4\times2)(2\times3)
+$$
+
+The inner dimensions are both 2.
+
+$$
+2=2
+$$
+
+Therefore, multiplication is possible.
+
+**Final Answer:**
 
 $$
 \boxed{CA:4\times3}
 $$
 
-### 7. AD
+---
+
+## Solution 7. Product AD
+
+Matrix A has size 2×3.
+
+Matrix D has size 2×2.
 
 $$
-(2\times3)(2\times2)
+AD=(2\times3)(2\times2)
 $$
 
-Since $3\neq2$, multiplication is not defined.
-
-### 8. DA
+The inner dimensions are 3 and 2.
 
 $$
-(2\times2)(2\times3)
+3\neq2
 $$
 
-The inner dimensions match.
+Therefore, multiplication is not possible.
+
+**Final Answer:**
+
+$$
+\boxed{AD:\text{Undefined}}
+$$
+
+---
+
+## Solution 8. Product DA
+
+Matrix D has size 2×2.
+
+Matrix A has size 2×3.
+
+$$
+DA=(2\times2)(2\times3)
+$$
+
+The inner dimensions are both 2.
+
+$$
+2=2
+$$
+
+Therefore, multiplication is possible.
+
+**Final Answer:**
 
 $$
 \boxed{DA:2\times3}
 $$
 
-### Final Answers
+---
 
-| Product | Defined? | Result |
+## Final Answers
+
+| Product | Defined? | Result Size |
 |---|---|---|
 | AB | Yes | 2×4 |
 | BA | No | Undefined |
@@ -186,6 +263,54 @@ $$
 | AD | No | Undefined |
 | DA | Yes | 2×3 |
 
-**Explanation:** Matrix multiplication depends on dimension compatibility. The number of columns of the first matrix must equal the number of rows of the second matrix.
+---
+
+## Mathematical Verification
+
+We can check the four defined products using the general matrix multiplication rule.
+
+$$
+AB=(2\times3)(3\times4)
+\Rightarrow 2\times4
+$$
+
+$$
+BC=(3\times4)(4\times2)
+\Rightarrow 3\times2
+$$
+
+$$
+CA=(4\times2)(2\times3)
+\Rightarrow 4\times3
+$$
+
+$$
+DA=(2\times2)(2\times3)
+\Rightarrow 2\times3
+$$
+
+In all four cases, the inner dimensions match.
+
+Therefore, these products are correctly defined.
 
 ---
+
+## Explanation
+
+Matrix multiplication depends on the order of the matrices.
+
+For example:
+
+$$
+AB:\text{Defined}
+$$
+
+But:
+
+$$
+BA:\text{Undefined}
+$$
+
+This happens because the inner dimensions are different when the order is reversed.
+
+**Conclusion:** Before multiplying matrices, always check that the number of columns of the first matrix equals the number of rows of the second matrix.
