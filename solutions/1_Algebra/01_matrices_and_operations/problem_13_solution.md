@@ -262,7 +262,7 @@ $$
 
 ### Step 7: Explanation of the Recurrence
 
-The matrix F transforms the vector containing two consecutive terms into a new vector.
+The matrix F transforms a vector containing two consecutive Fibonacci numbers into a new vector.
 
 The first component becomes the sum of the two terms.
 
@@ -270,37 +270,63 @@ The second component keeps the previous first term.
 
 For example:
 
-$$
-F\begin{pmatrix}1\\0\end{pmatrix}
+```math
+F\begin{pmatrix}
+1\\
+0
+\end{pmatrix}
 =
-\begin{pmatrix}1\\1\end{pmatrix}
-$$
+\begin{pmatrix}
+1\\
+1
+\end{pmatrix}
+```
 
 Applying F again:
 
-$$
-F\begin{pmatrix}1\\1\end{pmatrix}
+```math
+F\begin{pmatrix}
+1\\
+1
+\end{pmatrix}
 =
-\begin{pmatrix}2\\1\end{pmatrix}
-$$
+\begin{pmatrix}
+2\\
+1
+\end{pmatrix}
+```
 
 Again:
 
-$$
-F\begin{pmatrix}2\\1\end{pmatrix}
+```math
+F\begin{pmatrix}
+2\\
+1
+\end{pmatrix}
 =
-\begin{pmatrix}3\\2\end{pmatrix}
-$$
+\begin{pmatrix}
+3\\
+2
+\end{pmatrix}
+```
 
 Again:
 
-$$
-F\begin{pmatrix}3\\2\end{pmatrix}
+```math
+F\begin{pmatrix}
+3\\
+2
+\end{pmatrix}
 =
-\begin{pmatrix}5\\3\end{pmatrix}
-$$
+\begin{pmatrix}
+5\\
+3
+\end{pmatrix}
+```
 
 This process generates consecutive Fibonacci numbers.
+
+
 
 ### Step 8: Verification
 
