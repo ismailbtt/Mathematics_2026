@@ -128,43 +128,33 @@ $$
 Combining these vectors as columns:
 
 $$
-\begin{pmatrix}Ab_1&Ab_2\end{pmatrix}
-=
-\begin{pmatrix}-1&2\\2&1\end{pmatrix}
+AB = [Ab_1 \quad Ab_2]
+$$
+
+Therefore:
+
+$$
+AB=\begin{pmatrix}
+-1 & 2\\
+2 & 1
+\end{pmatrix}
 $$
 
 This is exactly the matrix AB.
 
 ### Explanation
 
-Matrix multiplication can be understood as multiplying the first matrix by each column of the second matrix separately.
-
-In general, if:
-
-$$
-B=\begin{pmatrix}b_1&b_2&\cdots&b_n\end{pmatrix}
-$$
-
-then:
-
-$$
-\boxed{
-AB=\begin{pmatrix}Ab_1&Ab_2&\cdots&Ab_n\end{pmatrix}
-}
-$$
+The columns of AB are obtained by multiplying A by each column of B separately.
 
 ### Verification
 
-The first column of AB is:
-
 $$
-\begin{pmatrix}-1\\2\end{pmatrix}=Ab_1
-$$
-
-The second column of AB is:
-
-$$
-\begin{pmatrix}2\\1\end{pmatrix}=Ab_2
+AB=[Ab_1 \quad Ab_2]
+=\begin{pmatrix}
+-1 & 2\\
+2 & 1
+\end{pmatrix}
 $$
 
-Therefore, the columns of AB are exactly Ab₁ and Ab₂, as required.
+Therefore, the columns of AB are exactly Ab₁ and Ab₂.
+
