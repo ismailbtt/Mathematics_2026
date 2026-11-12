@@ -3,13 +3,15 @@
 
 ## Question
 
-Solve using Gaussian elimination:
+Solve the following system using Gaussian elimination:
 
-```text
-x + y + z = 6
-2x - y + z = 3
-x + 2y - z = 2
-```
+$$
+\begin{cases}
+x+y+z=6, \\
+2x-y+z=3, \\
+x+2y-z=2.
+\end{cases}
+$$
 
 After solving, substitute the result into all equations and check consistency.
 
@@ -19,47 +21,64 @@ After solving, substitute the result into all equations and check consistency.
 
 ### Step 1. Construct the Augmented Matrix
 
-```text
-[ 1   1   1 | 6 ]
-[ 2  -1   1 | 3 ]
-[ 1   2  -1 | 2 ]
-```
+The augmented matrix of the system is
+
+$$
+\begin{pmatrix}
+1 & 1 & 1 & \mid & 6 \\
+2 & -1 & 1 & \mid & 3 \\
+1 & 2 & -1 & \mid & 2 \\
+\end{pmatrix}
+$$
 
 ### Step 2. Apply Gaussian Elimination
 
-Apply:
+Eliminate the entries below the first pivot using the row operations:
 
-**R2 → R2 - 2R1**
+- $R_2 \to R_2-2R_1$
+- $R_3 \to R_3-R_1$
 
-**R3 → R3 - R1**
+The resulting matrix is
 
-The matrix becomes:
+$$
+\begin{pmatrix}
+1 & 1 & 1 & \mid & 6 \\
+0 & -3 & -1 & \mid & -9 \\
+0 & 1 & -2 & \mid & -4 \\
+\end{pmatrix}
+$$
 
-```text
-[ 1   1   1 |  6 ]
-[ 0  -3  -1 | -9 ]
-[ 0   1  -2 | -4 ]
-```
+Swap the second and third rows to obtain a simpler pivot:
 
-Swap the second and third rows:
+$$
+R_2 \leftrightarrow R_3
+$$
 
-**R2 ↔ R3**
+The matrix becomes
 
-```text
-[ 1   1   1 |  6 ]
-[ 0   1  -2 | -4 ]
-[ 0  -3  -1 | -9 ]
-```
+$$
+\begin{pmatrix}
+1 & 1 & 1 & \mid & 6 \\
+0 & 1 & -2 & \mid & -4 \\
+0 & -3 & -1 & \mid & -9 \\
+\end{pmatrix}
+$$
 
-Apply:
+Next, eliminate the entry below the second pivot:
 
-**R3 → R3 + 3R2**
+$$
+R_3 \to R_3+3R_2
+$$
 
-```text
-[ 1   1   1 |   6 ]
-[ 0   1  -2 |  -4 ]
-[ 0   0  -7 | -21 ]
-```
+We obtain
+
+$$
+\begin{pmatrix}
+1 & 1 & 1 & \mid & 6 \\
+0 & 1 & -2 & \mid & -4 \\
+0 & 0 & -7 & \mid & -21 \\
+\end{pmatrix}
+$$
 
 The matrix is now in row echelon form.
 
@@ -71,6 +90,8 @@ $$
 -7z=-21
 $$
 
+Therefore,
+
 $$
 z=3
 $$
@@ -81,8 +102,10 @@ $$
 y-2z=-4
 $$
 
+Substituting $z=3$:
+
 $$
-y-2(3)=-4
+y-6=-4
 $$
 
 $$
@@ -95,6 +118,8 @@ $$
 x+y+z=6
 $$
 
+Substituting $y=2$ and $z=3$:
+
 $$
 x+2+3=6
 $$
@@ -105,7 +130,7 @@ $$
 
 ### Step 4. Verify the Solution
 
-Substitute x = 1, y = 2, and z = 3.
+Substitute $x=1$, $y=2$, and $z=3$ into the original equations.
 
 **Equation 1:**
 
@@ -127,16 +152,21 @@ $$
 
 All three equations are satisfied.
 
+---
+
 ## Final Answer
 
+The solution is
+
 $$
-\boxed{x=1,\quad y=2,\quad z=3}
+x=1,\qquad y=2,\qquad z=3
 $$
+
+**Number of solutions:** Exactly one.
 
 **Conclusion:**
 
-Gaussian elimination gives exactly one solution.
+Gaussian elimination produces three nonzero pivots, so the system has a unique solution.
 
-The coefficient matrix has three pivot positions, so there are no free variables.
+Substitution confirms that the solution satisfies all three original equations. Therefore, the system is consistent.
 
-Substitution confirms that the solution satisfies all three equations.
