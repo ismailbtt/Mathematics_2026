@@ -1,85 +1,115 @@
 
-# Exercise 5. Row Echelon Form and Number of Solutions
+# Exercise 4. Infinitely Many Solutions
 
 ## Question
 
-For the augmented matrix
+Solve the system:
 
 ```text
-[ 1   2  -1 | 3 ]
-[ 0   1   2 | 1 ]
-[ 0   0   0 | 0 ]
+x + y + z = 2
+2x + 2y + 2z = 4
+x - y + z = 0
 ```
 
-determine the number of solutions and write them in parametric form. Explain how you know how many variables may be chosen freely.
+Give the solution in parametric form, identify a free variable, and for one chosen parameter value check that the resulting point satisfies the system.
 
 ---
 
 ## Solution
 
-### Step 1. Interpret the Matrix
+### Step 1. Construct the Augmented Matrix
 
-The augmented matrix represents the system:
+```text
+[ 1   1   1 | 2 ]
+[ 2   2   2 | 4 ]
+[ 1  -1   1 | 0 ]
+```
+
+### Step 2. Apply Gaussian Elimination
+
+Apply:
+
+**R2 → R2 - 2R1**
+
+**R3 → R3 - R1**
+
+The matrix becomes:
+
+```text
+[ 1   1   1 |  2 ]
+[ 0   0   0 |  0 ]
+[ 0  -2   0 | -2 ]
+```
+
+Swap the second and third rows:
+
+**R2 ↔ R3**
+
+```text
+[ 1   1   1 |  2 ]
+[ 0  -2   0 | -2 ]
+[ 0   0   0 |  0 ]
+```
+
+Divide the second row by -2:
+
+**R2 → (-1/2)R2**
+
+```text
+[ 1   1   1 | 2 ]
+[ 0   1   0 | 1 ]
+[ 0   0   0 | 0 ]
+```
+
+Eliminate the second element of the first row:
+
+**R1 → R1 - R2**
+
+```text
+[ 1   0   1 | 1 ]
+[ 0   1   0 | 1 ]
+[ 0   0   0 | 0 ]
+```
+
+### Step 3. Find the Parametric Solution
+
+The reduced matrix represents:
 
 $$
-x+2y-z=3
+x+z=1
 $$
 
 $$
-y+2z=1
+y=1
 $$
 
-$$
-0=0
-$$
+There are three variables and two pivots, so one variable is free.
 
-There are three unknowns and two pivot columns. The third row does not introduce any additional restriction.
-
-Therefore, one variable is free, and the system has infinitely many solutions.
-
-### Step 2. Find the Parametric Solution
-
-From the second equation:
+Let:
 
 $$
-y+2z=1
+z=t,\quad t\in\mathbb{R}
 $$
-
-Let $z=t$, where $t\in\mathbb{R}$.
 
 Then:
 
 $$
-y=1-2t
+x=1-t
 $$
 
-Substitute into the first equation:
-
 $$
-x+2(1-2t)-t=3
-$$
-
-Simplifying:
-
-$$
-x+2-5t=3
+y=1
 $$
 
 Therefore:
 
 $$
-x=1+5t
+\boxed{x=1-t,\quad y=1,\quad z=t}
 $$
 
-The general solution is:
+### Step 4. Verify the Solution
 
-$$
-\boxed{x=1+5t,\quad y=1-2t,\quad z=t}
-$$
-
-### Step 3. Verify the Solution
-
-Choose $t=0$.
+Choose t = 0.
 
 Then:
 
@@ -87,28 +117,47 @@ $$
 x=1,\quad y=1,\quad z=0
 $$
 
-Substituting into the original equations:
+Substitute into the original equations.
+
+**Equation 1:**
 
 $$
-1+2(1)-0=3
+1+1+0=2
 $$
 
+**Equation 2:**
+
 $$
-1+2(0)=1
+2(1)+2(1)+2(0)=4
 $$
 
-Both equations are satisfied.
+**Equation 3:**
+
+$$
+1-1+0=0
+$$
+
+All three equations are satisfied.
 
 ## Final Answer
 
+The general solution is:
+
 $$
-\boxed{(x,y,z)=(1+5t,1-2t,t),\quad t\in\mathbb{R}}
+\boxed{(x,y,z)=(1-t,1,t),\quad t\in\mathbb{R}}
 $$
+
+**Free variable:** z = t
 
 **Number of solutions:** Infinitely many.
 
-**Free variable:** $z=t$.
+**Example solution:** (1, 1, 0)
 
 **Conclusion:**
 
-The system has three variables and two pivot columns, so exactly one variable is free. Because the system is consistent, every real value of $t$ gives a solution.
+Gaussian elimination produces two pivot variables and one free variable.
+
+The system is consistent, and every real value of t gives a valid solution.
+
+Therefore, the system has infinitely many solutions.
+
