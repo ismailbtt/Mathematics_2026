@@ -1,9 +1,9 @@
 
 # Exercise 2. Gaussian Elimination — One Solution
 
-## Given System
+## Question
 
-We are given the following system of linear equations:
+Solve using Gaussian elimination:
 
 ```text
 x + y + z = 6
@@ -11,11 +11,13 @@ x + y + z = 6
 x + 2y - z = 2
 ```
 
-The task is to solve the system using Gaussian elimination and verify the solution by substitution.
+After solving, substitute the result into all equations and check consistency.
 
-## Step 1. Construct the Augmented Matrix
+---
 
-The augmented matrix is:
+## Solution
+
+### Step 1. Construct the Augmented Matrix
 
 ```text
 [ 1   1   1 | 6 ]
@@ -23,14 +25,15 @@ The augmented matrix is:
 [ 1   2  -1 | 2 ]
 ```
 
-## Step 2. Eliminate the First Column
+### Step 2. Apply Gaussian Elimination
 
-Apply the following row operations:
+Apply:
 
-- R2 → R2 - 2R1
-- R3 → R3 - R1
+**R2 → R2 - 2R1**
 
-The resulting matrix is:
+**R3 → R3 - R1**
+
+The matrix becomes:
 
 ```text
 [ 1   1   1 |  6 ]
@@ -38,7 +41,7 @@ The resulting matrix is:
 [ 0   1  -2 | -4 ]
 ```
 
-Swap the second and third rows to obtain a simpler pivot:
+Swap the second and third rows:
 
 **R2 ↔ R3**
 
@@ -48,13 +51,9 @@ Swap the second and third rows to obtain a simpler pivot:
 [ 0  -3  -1 | -9 ]
 ```
 
-## Step 3. Eliminate the Second Column
-
-Apply the row operation:
+Apply:
 
 **R3 → R3 + 3R2**
-
-The matrix becomes:
 
 ```text
 [ 1   1   1 |   6 ]
@@ -64,7 +63,7 @@ The matrix becomes:
 
 The matrix is now in row echelon form.
 
-## Step 4. Back Substitution
+### Step 3. Back Substitution
 
 From the third row:
 
@@ -82,10 +81,8 @@ $$
 y-2z=-4
 $$
 
-Substituting $z=3$:
-
 $$
-y-6=-4
+y-2(3)=-4
 $$
 
 $$
@@ -98,8 +95,6 @@ $$
 x+y+z=6
 $$
 
-Substituting $y=2$ and $z=3$:
-
 $$
 x+2+3=6
 $$
@@ -108,15 +103,9 @@ $$
 x=1
 $$
 
-Therefore, the solution is:
+### Step 4. Verify the Solution
 
-- **x = 1**
-- **y = 2**
-- **z = 3**
-
-## Step 5. Verify the Solution
-
-Substitute the values into all three original equations.
+Substitute x = 1, y = 2, and z = 3.
 
 **Equation 1:**
 
@@ -140,14 +129,14 @@ All three equations are satisfied.
 
 ## Final Answer
 
-The solution is:
-
 $$
 \boxed{x=1,\quad y=2,\quad z=3}
 $$
 
 **Conclusion:**
 
-Gaussian elimination reduces the system to row echelon form. Back substitution gives the unique solution $x=1$, $y=2$, and $z=3$.
+Gaussian elimination gives exactly one solution.
 
-All three equations are satisfied, confirming that the solution is correct.
+The coefficient matrix has three pivot positions, so there are no free variables.
+
+Substitution confirms that the solution satisfies all three equations.
