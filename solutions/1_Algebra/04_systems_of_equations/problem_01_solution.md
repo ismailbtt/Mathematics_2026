@@ -5,13 +5,15 @@
 
 Write the system
 
-```text
-2x - y + z = 4
-x + 3y - 2z = 1
-3x + y + z = 7
-```
+$$
+\begin{cases}
+2x-y+z=4, \\
+x+3y-2z=1, \\
+3x+y+z=7.
+\end{cases}
+$$
 
-in the form Ax = b.
+in the form $Ax=b$.
 
 Identify the coefficient matrix, the vector of unknowns, and the right-hand side vector. Explain how each row of the matrix corresponds to one equation.
 
@@ -21,79 +23,130 @@ Identify the coefficient matrix, the vector of unknowns, and the right-hand side
 
 ### Step 1. Identify the Coefficient Matrix
 
-The coefficient matrix A contains the coefficients of x, y, and z.
+The coefficient matrix $A$ contains the coefficients of the variables $x$, $y$, and $z$.
 
-```text
-    [ 2  -1   1 ]
-A = [ 1   3  -2 ]
-    [ 3   1   1 ]
-```
+$$
+A=
+\begin{pmatrix}
+2 & -1 & 1 \\
+1 & 3 & -2 \\
+3 & 1 & 1 \\
+\end{pmatrix}
+$$
 
 ### Step 2. Identify the Unknown Vector
 
-The unknown vector contains the variables:
+The vector of unknowns is
 
-```text
-    [ x ]
-X = [ y ]
-    [ z ]
-```
+$$
+x=
+\begin{pmatrix}
+x \\
+y \\
+z \\
+\end{pmatrix}
+$$
 
 ### Step 3. Identify the Right-Hand Side Vector
 
-The vector b contains the constants from the equations.
+The right-hand side vector contains the constants from the equations.
 
-```text
-    [ 4 ]
-b = [ 1 ]
-    [ 7 ]
-```
+$$
+b=
+\begin{pmatrix}
+4 \\
+1 \\
+7 \\
+\end{pmatrix}
+$$
 
 ### Step 4. Write the Matrix Equation
 
-The system can be written as:
+The system can be expressed in the form $Ax=b$.
 
 $$
-AX=b
+\begin{pmatrix}
+2 & -1 & 1 \\
+1 & 3 & -2 \\
+3 & 1 & 1 \\
+\end{pmatrix}
+\begin{pmatrix}
+x \\
+y \\
+z \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+4 \\
+1 \\
+7 \\
+\end{pmatrix}
 $$
-
-Substituting the matrices:
-
-```text
-[ 2  -1   1 ] [ x ]   [ 4 ]
-[ 1   3  -2 ] [ y ] = [ 1 ]
-[ 3   1   1 ] [ z ]   [ 7 ]
-```
 
 ### Step 5. Verify the Representation
 
-Multiplying the coefficient matrix by the unknown vector gives:
+Multiplying the coefficient matrix by the unknown vector gives
 
-```text
-[ 2x - y + z  ]   [ 4 ]
-[ x + 3y - 2z ] = [ 1 ]
-[ 3x + y + z  ]   [ 7 ]
-```
+$$
+Ax=
+\begin{pmatrix}
+2x-y+z \\
+x+3y-2z \\
+3x+y+z \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+4 \\
+1 \\
+7 \\
+\end{pmatrix}
+$$
 
 Each row corresponds to one equation:
 
-- Row 1: 2x - y + z = 4
-- Row 2: x + 3y - 2z = 1
-- Row 3: 3x + y + z = 7
+- Row 1 represents $2x-y+z=4$.
+- Row 2 represents $x+3y-2z=1$.
+- Row 3 represents $3x+y+z=7$.
+
+Therefore, the matrix equation correctly represents the original system.
 
 ## Final Answer
 
-The matrix representation is:
+The system in matrix form is
 
-```text
-[ 2  -1   1 ] [ x ]   [ 4 ]
-[ 1   3  -2 ] [ y ] = [ 1 ]
-[ 3   1   1 ] [ z ]   [ 7 ]
-```
+$$
+Ax=b
+$$
+
+where
+
+$$
+A=
+\begin{pmatrix}
+2 & -1 & 1 \\
+1 & 3 & -2 \\
+3 & 1 & 1 \\
+\end{pmatrix}
+$$
+
+$$
+x=
+\begin{pmatrix}
+x \\
+y \\
+z \\
+\end{pmatrix}
+$$
+
+$$
+b=
+\begin{pmatrix}
+4 \\
+1 \\
+7 \\
+\end{pmatrix}
+$$
 
 **Conclusion:**
 
-The system is correctly represented in the form AX = b.
-
-Each row of A contains the coefficients of one equation, X contains the unknowns, and b contains the constants.
-
+The system is correctly expressed in matrix form. Each row of $A$ contains the coefficients of one equation, the vector $x$ contains the unknowns, and $b$ contains the constant terms.
