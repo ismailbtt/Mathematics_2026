@@ -3,7 +3,7 @@
 
 ## Given Matrices
 
-We are given the following matrices:
+We are given:
 
 $$
 A=
@@ -19,11 +19,11 @@ B=
 \end{pmatrix}
 $$
 
-The task is to calculate $(AB)^{-1}$ and $B^{-1}A^{-1}$, verify that they are equal, and explain why the order of multiplication is reversed.
+The task is to calculate $(AB)^{-1}$ and $B^{-1}A^{-1}$, verify that they are equal, and explain why the order is reversed.
 
-## Step 1. Calculate the Product AB
+## Step 1. Calculate AB
 
-First, multiply matrices $A$ and $B$:
+First, multiply the two matrices:
 
 $$
 AB=
@@ -37,18 +37,6 @@ AB=
 \end{pmatrix}
 $$
 
-Performing matrix multiplication:
-
-$$
-AB=
-\begin{pmatrix}
-1(2)+1(0) & 1(0)+1(3) \\
-0(2)+1(0) & 0(0)+1(3)
-\end{pmatrix}
-$$
-
-Therefore:
-
 $$
 AB=
 \begin{pmatrix}
@@ -59,30 +47,15 @@ $$
 
 ## Step 2. Find the Inverse of AB
 
-For a general $2 \times 2$ matrix, the inverse formula is:
+The determinant is:
 
 $$
-M^{-1}=
-\frac{1}{ad-bc}
-\begin{pmatrix}
-d & -b \\
--c & a
-\end{pmatrix}
-$$
-
-First, calculate the determinant of $AB$:
-
-$$
-\det(AB)=(2)(3)-(3)(0)
-$$
-
-$$
-\det(AB)=6
+\det(AB)=(2)(3)-(3)(0)=6
 $$
 
 Since the determinant is nonzero, the inverse exists.
 
-Applying the inverse formula:
+Using the inverse formula:
 
 $$
 (AB)^{-1}=
@@ -93,7 +66,7 @@ $$
 \end{pmatrix}
 $$
 
-Simplifying:
+Therefore:
 
 $$
 \boxed{
@@ -105,9 +78,9 @@ $$
 }
 $$
 
-## Step 3. Calculate the Inverse of A
+## Step 3. Find A^{-1} and B^{-1}
 
-The matrix $A$ is:
+For matrix $A$:
 
 $$
 A=
@@ -120,35 +93,20 @@ $$
 Its determinant is:
 
 $$
-\det(A)=(1)(1)-(1)(0)=1
-$$
-
-Using the inverse formula:
-
-$$
-A^{-1}=
-\frac{1}{1}
-\begin{pmatrix}
-1 & -1 \\
-0 & 1
-\end{pmatrix}
+\det(A)=1
 $$
 
 Therefore:
 
 $$
-\boxed{
 A^{-1}=
 \begin{pmatrix}
 1 & -1 \\
 0 & 1
 \end{pmatrix}
-}
 $$
 
-## Step 4. Calculate the Inverse of B
-
-The matrix $B$ is:
+For matrix $B$:
 
 $$
 B=
@@ -158,23 +116,19 @@ B=
 \end{pmatrix}
 $$
 
-Since $B$ is a diagonal matrix, its inverse is obtained by taking the reciprocal of each nonzero diagonal element.
-
-Therefore:
+Since $B$ is diagonal, its inverse is:
 
 $$
-\boxed{
 B^{-1}=
 \begin{pmatrix}
 \frac{1}{2} & 0 \\
 0 & \frac{1}{3}
 \end{pmatrix}
-}
 $$
 
-## Step 5. Calculate B^{-1}A^{-1}
+## Step 4. Calculate B^{-1}A^{-1}
 
-Now, multiply the inverse matrices in reverse order:
+Multiply the inverse matrices in reverse order:
 
 $$
 B^{-1}A^{-1}=
@@ -193,46 +147,10 @@ Performing matrix multiplication:
 $$
 B^{-1}A^{-1}=
 \begin{pmatrix}
-\frac{1}{2}(1)+0(0) & \frac{1}{2}(-1)+0(1) \\
-0(1)+\frac{1}{3}(0) & 0(-1)+\frac{1}{3}(1)
-\end{pmatrix}
-$$
-
-Simplifying:
-
-$$
-\boxed{
-B^{-1}A^{-1}=
-\begin{pmatrix}
-\frac{1}{2} & -\frac{1}{2} \\
-0 & \frac{1}{3}
-\end{pmatrix}
-}
-$$
-
-## Step 6. Compare the Results
-
-From Step 2, we obtained:
-
-$$
-(AB)^{-1}=
-\begin{pmatrix}
 \frac{1}{2} & -\frac{1}{2} \\
 0 & \frac{1}{3}
 \end{pmatrix}
 $$
-
-From Step 5, we obtained:
-
-$$
-B^{-1}A^{-1}=
-\begin{pmatrix}
-\frac{1}{2} & -\frac{1}{2} \\
-0 & \frac{1}{3}
-\end{pmatrix}
-$$
-
-Both matrices are identical.
 
 Therefore:
 
@@ -240,17 +158,15 @@ $$
 \boxed{(AB)^{-1}=B^{-1}A^{-1}}
 $$
 
-This confirms the inverse-of-a-product property.
+Both methods give the same result.
 
-## Step 7. Verify by Multiplication
+## Step 5. Verify the Result
 
-To verify the result, calculate:
+To verify, calculate:
 
 $$
 (AB)(B^{-1}A^{-1})
 $$
-
-Substituting the matrices:
 
 $$
 =
@@ -263,18 +179,6 @@ $$
 0 & \frac{1}{3}
 \end{pmatrix}
 $$
-
-Performing matrix multiplication:
-
-$$
-=
-\begin{pmatrix}
-2(\frac{1}{2})+3(0) & 2(-\frac{1}{2})+3(\frac{1}{3}) \\
-0(\frac{1}{2})+3(0) & 0(-\frac{1}{2})+3(\frac{1}{3})
-\end{pmatrix}
-$$
-
-Simplifying:
 
 $$
 =
@@ -297,29 +201,26 @@ $$
 }
 $$
 
-The multiplication confirms that $B^{-1}A^{-1}$ is the inverse of $AB$.
+This confirms that $B^{-1}A^{-1}$ is the inverse of $AB$.
 
-## Step 8. Explain the Reversed Order
+## Step 6. Explain the Reversed Order
 
-The inverse of a product follows the rule:
+The inverse-of-a-product property is:
 
 $$
 (AB)^{-1}=B^{-1}A^{-1}
 $$
 
-The order is reversed because matrix multiplication is generally not commutative.
+When the product $AB$ acts on a column vector, matrix $B$ is applied first, followed by matrix $A$.
 
-To undo the product $AB$, we must first cancel $B$ and then cancel $A$.
+To undo these transformations, we must reverse their order.
+
+Therefore, we first apply $A^{-1}$ and then $B^{-1}$.
 
 Algebraically:
 
 $$
 (AB)(B^{-1}A^{-1})
-$$
-
-Using associativity:
-
-$$
 =A(BB^{-1})A^{-1}
 $$
 
@@ -327,62 +228,37 @@ Since $BB^{-1}=I$:
 
 $$
 =AIA^{-1}
-$$
-
-$$
 =AA^{-1}
-$$
-
-$$
 =I
 $$
 
-Similarly, multiplication in the opposite direction gives:
+Similarly:
 
 $$
 (B^{-1}A^{-1})(AB)
-$$
-
-$$
 =B^{-1}(A^{-1}A)B
 $$
 
 $$
 =B^{-1}IB
-$$
-
-$$
+=B^{-1}B
 =I
 $$
 
-Thus, the reversed order guarantees that the factors cancel correctly.
+Thus, the reversed order is necessary to cancel the matrices correctly.
 
 ## Final Answer
 
-We calculated:
+We obtained:
 
 $$
-(AB)^{-1}=
+\boxed{
+(AB)^{-1}=B^{-1}A^{-1}=
 \begin{pmatrix}
 \frac{1}{2} & -\frac{1}{2} \\
 0 & \frac{1}{3}
 \end{pmatrix}
-$$
-
-and:
-
-$$
-B^{-1}A^{-1}=
-\begin{pmatrix}
-\frac{1}{2} & -\frac{1}{2} \\
-0 & \frac{1}{3}
-\end{pmatrix}
-$$
-
-Therefore:
-
-$$
-\boxed{(AB)^{-1}=B^{-1}A^{-1}}
+}
 $$
 
 **Verification:**
@@ -393,8 +269,13 @@ $$
 
 **Conclusion:**
 
-Both methods produce the same inverse matrix.
+Both calculations produce the same inverse matrix.
 
-The inverse of a product is obtained by multiplying the individual inverses in reverse order.
+The order is reversed because matrix transformations must be undone in the opposite order in which they are applied.
 
-This is necessary because matrix multiplication is generally not commutative, and the reversed order allows the original transformations to be undone correctly.
+The result confirms the property:
+
+$$
+\boxed{(AB)^{-1}=B^{-1}A^{-1}}
+$$
+
