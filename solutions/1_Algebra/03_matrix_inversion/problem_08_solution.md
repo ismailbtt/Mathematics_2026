@@ -39,21 +39,13 @@ S^{-1}=
 }
 $$
 
+
 ## Step 2. Geometric Interpretation
 
 The original transformation $S$ scales a vector as follows:
 
 $$
-S
-\begin{pmatrix}
-x \\
-y
-\end{pmatrix}
-=
-\begin{pmatrix}
-2x \\
-\frac{y}{2}
-\end{pmatrix}
+S\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}2x\\\frac{y}{2}\end{pmatrix}
 $$
 
 This means that:
@@ -64,19 +56,13 @@ This means that:
 The inverse transformation reverses these effects:
 
 $$
-S^{-1}
-\begin{pmatrix}
-x \\
-y
-\end{pmatrix}
-=
-\begin{pmatrix}
-\frac{x}{2} \\
-2y
-\end{pmatrix}
+S^{-1}\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}\frac{x}{2}\\2y\end{pmatrix}
 $$
 
-Thus, $S^{-1}$ compresses the x-coordinate by $\frac{1}{2}$ and stretches the y-coordinate by $2$.
+Thus, $S^{-1}$ compresses the x-coordinate by a factor of $\frac{1}{2}$ and stretches the y-coordinate by a factor of $2$.
+
+Geometrically, the inverse transformation restores the original coordinates.
+
 
 ## Step 3. Verify Using a Vector
 
