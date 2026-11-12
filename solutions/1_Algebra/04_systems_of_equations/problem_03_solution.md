@@ -1,15 +1,16 @@
 
-
 # Exercise 3. Inconsistent System
 
 ## Question
 
 Solve or show that the following system is inconsistent:
 
-```text
-x + 2y = 3
-2x + 4y = 7
-```
+$$
+\begin{cases}
+x+2y=3, \\
+2x+4y=7.
+\end{cases}
+$$
 
 Show how the contradiction appears in the matrix after elimination and interpret it in terms of equations.
 
@@ -19,65 +20,63 @@ Show how the contradiction appears in the matrix after elimination and interpret
 
 ### Step 1. Construct the Augmented Matrix
 
-```text
-[ 1   2 | 3 ]
-[ 2   4 | 7 ]
-```
+The augmented matrix is
+
+$$
+\begin{pmatrix}
+1 & 2 & \mid & 3 \\
+2 & 4 & \mid & 7 \\
+\end{pmatrix}
+$$
 
 ### Step 2. Apply Gaussian Elimination
 
-Apply the row operation:
+To eliminate the first element of the second row, apply the row operation:
 
-**R2 → R2 - 2R1**
+$$
+R_2 \to R_2-2R_1
+$$
 
-Calculating the second row:
+The resulting matrix is
 
-```text
-[ 2   4 | 7 ] - 2[ 1   2 | 3 ]
-
-= [ 0   0 | 1 ]
-```
-
-The resulting augmented matrix is:
-
-```text
-[ 1   2 | 3 ]
-[ 0   0 | 1 ]
-```
+$$
+\begin{pmatrix}
+1 & 2 & \mid & 3 \\
+0 & 0 & \mid & 1 \\
+\end{pmatrix}
+$$
 
 ### Step 3. Identify the Contradiction
 
-The second row represents:
+The second row represents the equation
 
 $$
 0x+0y=1
 $$
 
-Therefore:
+which simplifies to
 
 $$
 0=1
 $$
 
-This is impossible.
-
-Hence, the system is inconsistent.
+This is impossible. Therefore, the system is inconsistent and has no solution.
 
 ### Step 4. Interpret the Original Equations
 
-The first equation is:
+The first equation is
 
 $$
 x+2y=3
 $$
 
-Multiplying by 2:
+Multiplying both sides by 2 gives
 
 $$
 2x+4y=6
 $$
 
-However, the second equation states:
+However, the second equation requires
 
 $$
 2x+4y=7
@@ -85,28 +84,31 @@ $$
 
 The same expression cannot equal both 6 and 7.
 
-Therefore, no values of x and y can satisfy both equations.
+Therefore, no values of $x$ and $y$ can satisfy both equations simultaneously.
+
+---
 
 ## Final Answer
 
-The reduced augmented matrix is:
-
-```text
-[ 1   2 | 3 ]
-[ 0   0 | 1 ]
-```
-
-The contradiction is:
+After Gaussian elimination, the augmented matrix becomes
 
 $$
-\boxed{0=1}
+\begin{pmatrix}
+1 & 2 & \mid & 3 \\
+0 & 0 & \mid & 1 \\
+\end{pmatrix}
 $$
 
-**Number of solutions: No solution.**
+The second row gives the contradiction
+
+$$
+0=1
+$$
+
+**Number of solutions:** No solution.
 
 **Conclusion:**
 
 The system is inconsistent because Gaussian elimination produces a contradictory equation.
 
-Geometrically, the equations represent two distinct parallel lines that never intersect.
-
+Geometrically, the two equations represent distinct parallel lines that never intersect.
