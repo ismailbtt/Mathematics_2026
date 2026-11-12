@@ -1,153 +1,94 @@
 
-# Exercise 2. Gaussian Elimination — One Solution
+# Exercise 1. From a System to a Matrix — Solution
 
 ## Given System
 
 We are given the following system of linear equations:
 
-```text
-x + y + z = 6
-2x - y + z = 3
-x + 2y - z = 2
-```
-
-The task is to solve the system using Gaussian elimination and verify the solution by substitution.
-
-## Step 1. Construct the Augmented Matrix
-
-The augmented matrix is:
-
-```text
-[ 1   1   1 | 6 ]
-[ 2  -1   1 | 3 ]
-[ 1   2  -1 | 2 ]
-```
-
-## Step 2. Eliminate the First Column
-
-Apply the following row operations:
-
-- R2 → R2 - 2R1
-- R3 → R3 - R1
-
-The resulting matrix is:
-
-```text
-[ 1   1   1 |  6 ]
-[ 0  -3  -1 | -9 ]
-[ 0   1  -2 | -4 ]
-```
-
-Swap the second and third rows to obtain a simpler pivot:
-
-**R2 ↔ R3**
-
-```text
-[ 1   1   1 |  6 ]
-[ 0   1  -2 | -4 ]
-[ 0  -3  -1 | -9 ]
-```
-
-## Step 3. Eliminate the Second Column
-
-Apply the row operation:
-
-**R3 → R3 + 3R2**
-
-The matrix becomes:
-
-```text
-[ 1   1   1 |   6 ]
-[ 0   1  -2 |  -4 ]
-[ 0   0  -7 | -21 ]
-```
-
-The matrix is now in row echelon form.
-
-## Step 4. Back Substitution
-
-From the third row:
-
 $$
--7z=-21
+\begin{cases}
+2x-y+z=4 \\
+x+3y-2z=1 \\
+3x+y+z=7
+\end{cases}
 $$
 
-$$
-z=3
-$$
+The task is to express the system in matrix form $Ax=b$ and identify its components.
 
-From the second row:
+## Step 1. Identify the Coefficient Matrix
 
-$$
-y-2z=-4
-$$
-
-Substituting $z=3$:
+The coefficient matrix $A$ contains the coefficients of the variables $x$, $y$, and $z$ in each equation.
 
 $$
-y-6=-4
+A=\begin{pmatrix}2 & -1 & 1 \\ 1 & 3 & -2 \\ 3 & 1 & 1\end{pmatrix}
 $$
 
-$$
-y=2
-$$
+Each row represents the coefficients of one equation.
 
-From the first row:
+## Step 2. Identify the Unknown Vector
 
-$$
-x+y+z=6
-$$
-
-Substituting $y=2$ and $z=3$:
+The vector of unknowns contains the variables:
 
 $$
-x+2+3=6
+x=\begin{pmatrix}x \\ y \\ z\end{pmatrix}
 $$
 
-$$
-x=1
-$$
+## Step 3. Identify the Right-Hand Side Vector
 
-Therefore, the solution is:
-
-- **x = 1**
-- **y = 2**
-- **z = 3**
-
-## Step 5. Verify the Solution
-
-Substitute the values into all three original equations.
-
-**Equation 1:**
+The vector $b$ contains the constant terms from the right-hand side of each equation.
 
 $$
-1+2+3=6
+b=\begin{pmatrix}4 \\ 1 \\ 7\end{pmatrix}
 $$
 
-**Equation 2:**
+## Step 4. Write the Matrix Equation
+
+The system can now be expressed as:
 
 $$
-2(1)-2+3=3
+\boxed{Ax=b}
 $$
 
-**Equation 3:**
+Substituting the matrices:
 
 $$
-1+2(2)-3=2
+\begin{pmatrix}2 & -1 & 1 \\ 1 & 3 & -2 \\ 3 & 1 & 1\end{pmatrix}
+\begin{pmatrix}x \\ y \\ z\end{pmatrix}
+=
+\begin{pmatrix}4 \\ 1 \\ 7\end{pmatrix}
 $$
 
-All three equations are satisfied.
+## Step 5. Verify the Matrix Representation
+
+Multiplying the coefficient matrix by the unknown vector gives:
+
+$$
+Ax=\begin{pmatrix}2x-y+z \\ x+3y-2z \\ 3x+y+z\end{pmatrix}
+$$
+
+Therefore, we recover the original equations:
+
+- Row 1: $2x-y+z=4$
+- Row 2: $x+3y-2z=1$
+- Row 3: $3x+y+z=7$
+
+This confirms that the matrix equation correctly represents the given system.
 
 ## Final Answer
 
-The solution is:
+The system in matrix form is:
 
 $$
-\boxed{x=1,\quad y=2,\quad z=3}
+\boxed{
+\begin{pmatrix}2 & -1 & 1 \\ 1 & 3 & -2 \\ 3 & 1 & 1\end{pmatrix}
+\begin{pmatrix}x \\ y \\ z\end{pmatrix}
+=
+\begin{pmatrix}4 \\ 1 \\ 7\end{pmatrix}
+}
 $$
 
 **Conclusion:**
 
-Gaussian elimination reduces the system to row echelon form. Back substitution gives the unique solution $x=1$, $y=2$, and $z=3$.
+The system is successfully written in the form $Ax=b$.
 
-All three equations are satisfied, confirming that the solution is correct.
+Each row of the coefficient matrix corresponds to one equation, the unknown vector contains the variables, and the right-hand side vector contains the constants.
