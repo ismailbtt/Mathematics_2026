@@ -1,83 +1,83 @@
 
-# Exercise 3. Inconsistent System — Solution
 
-## Given System
+# Exercise 3. Inconsistent System
 
-We are given the following system of linear equations:
+## Question
+
+Solve or show that the following system is inconsistent:
 
 ```text
 x + 2y = 3
 2x + 4y = 7
 ```
 
-The task is to determine whether the system has a solution using Gaussian elimination.
+Show how the contradiction appears in the matrix after elimination and interpret it in terms of equations.
 
-## Step 1. Construct the Augmented Matrix
+---
 
-The augmented matrix is:
+## Solution
+
+### Step 1. Construct the Augmented Matrix
 
 ```text
 [ 1   2 | 3 ]
 [ 2   4 | 7 ]
 ```
 
-## Step 2. Apply Gaussian Elimination
+### Step 2. Apply Gaussian Elimination
 
-To eliminate the first element of the second row, apply:
+Apply the row operation:
 
 **R2 → R2 - 2R1**
 
-The new second row is:
+Calculating the second row:
 
 ```text
 [ 2   4 | 7 ] - 2[ 1   2 | 3 ]
+
 = [ 0   0 | 1 ]
 ```
 
-The augmented matrix becomes:
+The resulting augmented matrix is:
 
 ```text
 [ 1   2 | 3 ]
 [ 0   0 | 1 ]
 ```
 
-## Step 3. Interpret the Result
+### Step 3. Identify the Contradiction
 
-The second row represents the equation:
+The second row represents:
 
 $$
 0x+0y=1
 $$
 
-This simplifies to:
+Therefore:
 
 $$
 0=1
 $$
 
-This is a contradiction because zero cannot equal one.
+This is impossible.
 
-Therefore, the system is inconsistent and has no solution.
+Hence, the system is inconsistent.
 
-## Step 4. Explain Using the Original Equations
+### Step 4. Interpret the Original Equations
 
-The original equations are:
+The first equation is:
 
 $$
 x+2y=3
 $$
 
-$$
-2x+4y=7
-$$
-
-Multiplying the first equation by 2 gives:
+Multiplying by 2:
 
 $$
 2x+4y=6
 $$
 
-However, the second equation requires:
+However, the second equation states:
 
 $$
 2x+4y=7
@@ -85,29 +85,28 @@ $$
 
 The same expression cannot equal both 6 and 7.
 
-Therefore, no values of $x$ and $y$ can satisfy both equations simultaneously.
+Therefore, no values of x and y can satisfy both equations.
 
 ## Final Answer
 
-The final augmented matrix is:
+The reduced augmented matrix is:
 
 ```text
 [ 1   2 | 3 ]
 [ 0   0 | 1 ]
 ```
 
-The second row produces the contradiction:
+The contradiction is:
 
 $$
 \boxed{0=1}
 $$
 
-Therefore:
-
-**The system has no solution.**
+**Number of solutions: No solution.**
 
 **Conclusion:**
 
-Gaussian elimination produces a contradictory equation, proving that the system is inconsistent.
+The system is inconsistent because Gaussian elimination produces a contradictory equation.
 
-Geometrically, the two equations represent distinct parallel lines. Since they never intersect, the system has no solution.
+Geometrically, the equations represent two distinct parallel lines that never intersect.
+
