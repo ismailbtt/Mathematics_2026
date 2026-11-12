@@ -60,28 +60,43 @@ b=
 \end{pmatrix}
 $$
 
+
 ### Step 4. Write the Matrix Equation
 
-The system can be expressed in the form $Ax=b$.
+Using the coefficient matrix, unknown vector, and right-hand side vector identified above, the system can be written as
 
 $$
-\begin{pmatrix}
-2 & -1 & 1 \\
-1 & 3 & -2 \\
-3 & 1 & 1 \\
-\end{pmatrix}
-\begin{pmatrix}
-x \\
-y \\
-z \\
-\end{pmatrix}
-=
-\begin{pmatrix}
-4 \\
-1 \\
-7 \\
-\end{pmatrix}
+Ax=b
 $$
+
+This matrix equation represents all three original equations.
+
+### Step 5. Verify the Representation
+
+Multiplying each row of the coefficient matrix by the unknown vector gives the following equations:
+
+**Row 1:**
+
+$$
+2x-y+z=4
+$$
+
+**Row 2:**
+
+$$
+x+3y-2z=1
+$$
+
+**Row 3:**
+
+$$
+3x+y+z=7
+$$
+
+These equations are identical to the original system.
+
+Therefore, the matrix representation is correct.
+
 
 ### Step 5. Verify the Representation
 
