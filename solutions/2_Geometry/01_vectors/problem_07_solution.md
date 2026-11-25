@@ -1,6 +1,8 @@
 
 # Exercise 7 – Linear Dependence Without Heavy Computation
 
+## Question
+
 Given:
 
 u = (1, 2, 3)
@@ -9,15 +11,21 @@ v = (2, 4, 6)
 
 w = (0, 1, 1)
 
-## 1. Identify the Relationship Between u and v
+Identify a specific relation between u and v, decide whether the three vectors can be linearly independent, and explain why no long calculation is needed.
 
-Compare the components of the vectors:
+---
+
+## Solution
+
+### 1. Identify the Relationship Between u and v
+
+Compare the components:
 
 u = (1, 2, 3)
 
 v = (2, 4, 6)
 
-We can see that every component of v is twice the corresponding component of u.
+Every component of v is twice the corresponding component of u.
 
 Therefore:
 
@@ -29,23 +37,29 @@ Or equivalently:
 
 This means that u and v are linearly dependent.
 
-## 2. Determine Whether the Three Vectors Are Linearly Independent
+### 2. Determine Whether the Three Vectors Are Linearly Independent
 
-A set of vectors is linearly independent if none of the vectors can be expressed as a linear combination of the others.
+A set of vectors is linearly independent if the only solution to
+
+a*u + b*v + c*w = 0
+
+is:
+
+a = b = c = 0
 
 However, we already know that:
 
-v = 2u
+2u - v = 0
 
-Therefore, two of the vectors are linearly dependent.
+This is a nontrivial linear relation because the coefficients are not all zero.
 
-This automatically means that the entire set of three vectors is linearly dependent.
+Therefore, the entire set of three vectors is linearly dependent.
 
 **Result:**
 
 The vectors u, v, and w are NOT linearly independent.
 
-## 3. Explain Why No Long Calculation Is Needed
+### 3. Explain Why No Long Calculation Is Needed
 
 We do not need to calculate a determinant or solve a system of equations.
 
@@ -55,17 +69,19 @@ v = 2u
 
 is enough to prove linear dependence.
 
-One vector is simply a scalar multiple of another vector.
+One vector is a scalar multiple of another vector.
 
-The third vector cannot change this fact.
+Adding a third vector cannot make the entire set linearly independent.
 
-## 4. Geometric Interpretation
+### 4. Geometric Interpretation
 
 The vectors u and v lie on the same line and point in the same direction.
 
 Vector v is twice as long as vector u.
 
-The vector w = (0, 1, 1) does not change the linear dependence of the complete set.
+The vector w = (0, 1, 1) does not change the fact that the complete set is linearly dependent.
+
+---
 
 ## Final Answers
 
@@ -73,4 +89,3 @@ The vector w = (0, 1, 1) does not change the linear dependence of the complete s
 - u and v are linearly dependent.
 - The three vectors are linearly dependent.
 - No determinant calculation is necessary.
-
