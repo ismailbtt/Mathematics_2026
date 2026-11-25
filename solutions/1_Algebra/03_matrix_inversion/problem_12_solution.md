@@ -1,140 +1,209 @@
 
-# Exercise 12. Finding Inverses Without Starting from Scratch — Solution
+# Exercise 12 – Finding Inverses Without Starting from Scratch
 
-## Given Matrix
+## Question
 
-We are given:
+Given the inverse matrix:
 
-$$
-A^{-1}=\begin{pmatrix}2 & -1 \\ -3 & 2\end{pmatrix}
-$$
+```text
+A^(-1) = |  2  -1 |
+         | -3   2 |
+```
 
-The task is to calculate $(3A)^{-1}$, $(A^T)^{-1}$, and $(A^2)^{-1}$ without finding the original matrix $A$.
+Without finding the original matrix A, calculate:
 
-## Step 1. Calculate (3A)^{-1}
+1. (3A)^(-1)
+2. (A^T)^(-1)
+3. (A²)^(-1)
 
-For a nonzero scalar $k$, the inverse property is:
+Verify your results using inverse matrix properties.
 
-$$
-(kA)^{-1}=\frac{1}{k}A^{-1}
-$$
+---
 
-Using $k=3$:
+## Solution
 
-$$
-(3A)^{-1}=\frac{1}{3}A^{-1}
-$$
+### Step 1. Calculate (3A)^(-1)
 
-Substituting the given matrix:
+For a nonzero scalar k, the inverse property is:
 
-$$
-(3A)^{-1}=\frac{1}{3}\begin{pmatrix}2 & -1 \\ -3 & 2\end{pmatrix}
-$$
+```text
+(kA)^(-1) = (1/k) × A^(-1)
+```
+
+Using k = 3:
+
+```text
+(3A)^(-1) = (1/3) × A^(-1)
+```
+
+Substitute the given matrix:
+
+```text
+(3A)^(-1) = (1/3) × |  2  -1 |
+                       | -3   2 |
+```
+
+Multiply each element by 1/3:
+
+```text
+(3A)^(-1) = |  2/3  -1/3 |
+            |   -1   2/3 |
+```
 
 Therefore:
 
-$$
-\boxed{(3A)^{-1}=\begin{pmatrix}\frac{2}{3} & -\frac{1}{3} \\ -1 & \frac{2}{3}\end{pmatrix}}
-$$
+```text
+(3A)^(-1) = |  2/3  -1/3 |
+            |   -1   2/3 |
+```
 
-## Step 2. Calculate (A^T)^{-1}
+### Step 2. Calculate (A^T)^(-1)
 
-The inverse of a transpose follows the property:
+The inverse of a transpose follows this property:
 
-$$
-(A^T)^{-1}=(A^{-1})^T
-$$
+```text
+(A^T)^(-1) = (A^(-1))^T
+```
 
-This means we transpose the given inverse matrix.
+This means we transpose the given inverse matrix by switching its rows and columns.
 
-$$
-(A^{-1})^T=\begin{pmatrix}2 & -3 \\ -1 & 2\end{pmatrix}
-$$
+Original matrix:
+
+```text
+A^(-1) = |  2  -1 |
+         | -3   2 |
+```
+
+After transposing:
+
+```text
+(A^(-1))^T = |  2  -3 |
+             | -1   2 |
+```
 
 Therefore:
 
-$$
-\boxed{(A^T)^{-1}=\begin{pmatrix}2 & -3 \\ -1 & 2\end{pmatrix}}
-$$
+```text
+(A^T)^(-1) = |  2  -3 |
+             | -1   2 |
+```
 
-## Step 3. Calculate (A^2)^{-1}
+### Step 3. Calculate (A²)^(-1)
 
 The inverse of a product follows the property:
 
-$$
-(AB)^{-1}=B^{-1}A^{-1}
-$$
+```text
+(AB)^(-1) = B^(-1) × A^(-1)
+```
 
-Since $A^2=AA$, we have:
+Since A² = A × A:
 
-$$
-(A^2)^{-1}=A^{-1}A^{-1}=(A^{-1})^2
-$$
-
-Substituting the given inverse matrix:
-
-$$
-(A^2)^{-1}=\begin{pmatrix}2 & -1 \\ -3 & 2\end{pmatrix}\begin{pmatrix}2 & -1 \\ -3 & 2\end{pmatrix}
-$$
-
-Performing matrix multiplication:
-
-$$
-(A^2)^{-1}=\begin{pmatrix}4+3 & -2-2 \\ -6-6 & 3+4\end{pmatrix}
-$$
+```text
+(A²)^(-1) = A^(-1) × A^(-1)
+```
 
 Therefore:
 
-$$
-\boxed{(A^2)^{-1}=\begin{pmatrix}7 & -4 \\ -12 & 7\end{pmatrix}}
-$$
+```text
+(A²)^(-1) = (A^(-1))²
+```
 
-## Step 4. Verification
+Substitute the given inverse matrix:
 
-We can verify the results using inverse matrix properties without calculating $A$.
+```text
+(A²)^(-1) = |  2  -1 | × |  2  -1 |
+            | -3   2 |   | -3   2 |
+```
 
-**For $(3A)^{-1}$:**
+Perform matrix multiplication:
 
-$$
-(3A)\left(\frac{1}{3}A^{-1}\right)=AA^{-1}=I
-$$
+```text
+(A²)^(-1) = | (2×2)+(-1×-3)   (2×-1)+(-1×2) |
+            | (-3×2)+(2×-3)  (-3×-1)+(2×2) |
+```
 
-**For $(A^T)^{-1}$:**
+Simplify:
 
-$$
-A^T(A^{-1})^T=(A^{-1}A)^T=I
-$$
+```text
+(A²)^(-1) = | 4+3    -2-2 |
+            | -6-6    3+4 |
+```
 
-**For $(A^2)^{-1}$:**
+Therefore:
 
-$$
-A^2(A^{-1})^2=AAA^{-1}A^{-1}=I
-$$
+```text
+(A²)^(-1) = |  7  -4 |
+            | -12   7 |
+```
+
+### Step 4. Verification
+
+We can verify the results using inverse matrix properties without calculating the original matrix A.
+
+**For (3A)^(-1):**
+
+```text
+(3A) × ((1/3) × A^(-1))
+
+= A × A^(-1)
+
+= I
+```
+
+**For (A^T)^(-1):**
+
+```text
+A^T × (A^(-1))^T
+
+= (A^(-1) × A)^T
+
+= I
+```
+
+**For (A²)^(-1):**
+
+```text
+A² × (A^(-1))²
+
+= A × A × A^(-1) × A^(-1)
+
+= A × I × A^(-1)
+
+= A × A^(-1)
+
+= I
+```
 
 All three expressions produce the identity matrix, confirming the results.
+
+---
 
 ## Final Answer
 
 **1. Inverse of 3A:**
 
-$$
-\boxed{(3A)^{-1}=\begin{pmatrix}\frac{2}{3} & -\frac{1}{3} \\ -1 & \frac{2}{3}\end{pmatrix}}
-$$
+```text
+(3A)^(-1) = |  2/3  -1/3 |
+            |   -1   2/3 |
+```
 
 **2. Inverse of the transpose:**
 
-$$
-\boxed{(A^T)^{-1}=\begin{pmatrix}2 & -3 \\ -1 & 2\end{pmatrix}}
-$$
+```text
+(A^T)^(-1) = |  2  -3 |
+             | -1   2 |
+```
 
 **3. Inverse of A squared:**
 
-$$
-\boxed{(A^2)^{-1}=\begin{pmatrix}7 & -4 \\ -12 & 7\end{pmatrix}}
-$$
+```text
+(A²)^(-1) = |  7  -4 |
+            | -12   7 |
+```
 
 **Conclusion:**
 
-All three inverses were calculated using inverse matrix properties without finding the original matrix $A$.
+All three inverses were calculated using inverse matrix properties without finding the original matrix A.
 
-The results were verified using the identity $AA^{-1}=I$, confirming that the calculations are correct.
+The results were verified using the identity A × A^(-1) = I, confirming that the calculations are correct.
+
