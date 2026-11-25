@@ -1,31 +1,35 @@
 
 # Exercise 3 – Vector Normalization
 
-Given:
+## Question
 
-v = (3, 4)
+For v = (3, 4), find a unit vector e with the same direction and orientation.
 
-We need to find a unit vector e with the same direction and orientation as v.
+Check that ||e|| = 1, reconstruct v in the form v = ||v||e, and explain what changes during normalization and what remains unchanged.
 
-## 1. Calculate the Length of the Vector
+---
 
-The length of a vector in R² is calculated using:
+## Solution
 
-||v|| = √(x² + y²)
+### 1. Calculate the Length of the Vector
 
-Substitute the coordinates:
+The length formula in R² is:
 
-||v|| = √(3² + 4²)
+||v|| = sqrt(x² + y²)
 
-||v|| = √(9 + 16)
+Substitute:
 
-||v|| = √25
+||v|| = sqrt(3² + 4²)
+
+= sqrt(9 + 16)
+
+= sqrt(25)
 
 **Result:**
 
 ||v|| = 5
 
-## 2. Find the Unit Vector
+### 2. Find the Unit Vector
 
 To normalize a vector, divide each component by its length.
 
@@ -33,7 +37,7 @@ Formula:
 
 e = v / ||v||
 
-Substitute the values:
+Substitute:
 
 e = (3/5, 4/5)
 
@@ -41,15 +45,15 @@ e = (3/5, 4/5)
 
 e = (3/5, 4/5)
 
-## 3. Verify That the Unit Vector Has Length 1
+### 3. Verify That the Unit Vector Has Length 1
 
-Calculate the length of e:
+Calculate:
 
-||e|| = √((3/5)² + (4/5)²)
+||e|| = sqrt((3/5)² + (4/5)²)
 
-||e|| = √(9/25 + 16/25)
+= sqrt(9/25 + 16/25)
 
-||e|| = √(25/25)
+= sqrt(25/25)
 
 **Result:**
 
@@ -57,17 +61,17 @@ Calculate the length of e:
 
 The vector is a unit vector.
 
-## 4. Reconstruct the Original Vector
+### 4. Reconstruct the Original Vector
 
-We know that:
+We know:
 
-v = ||v|| * e
+v = ||v||e
 
-Substitute the values:
+Substitute:
 
-v = 5 * (3/5, 4/5)
+v = 5(3/5, 4/5)
 
-v = (3, 4)
+= (3, 4)
 
 **Result:**
 
@@ -75,13 +79,15 @@ v = (3, 4)
 
 The original vector is reconstructed correctly.
 
-## 5. Geometric Interpretation
+### 5. Geometric Interpretation
 
 Normalization changes the length of a vector to 1 while preserving its direction and orientation.
 
-The vector becomes shorter or longer, but it still points in the same direction.
-
 The original vector has length 5, while the normalized vector has length 1.
+
+The direction remains unchanged.
+
+---
 
 ## Final Answers
 
@@ -89,4 +95,4 @@ The original vector has length 5, while the normalized vector has length 1.
 - Length: ||v|| = 5
 - Unit vector: e = (3/5, 4/5)
 - Verification: ||e|| = 1
-- Reconstruction: 5 * e = (3, 4)
+- Reconstruction: 5e = (3, 4)
