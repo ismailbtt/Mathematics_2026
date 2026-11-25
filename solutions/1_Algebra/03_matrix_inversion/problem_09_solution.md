@@ -1,124 +1,181 @@
 
-# Exercise 9. Matrix Equation — Solution
+# Exercise 9 – Cross Product and Perpendicularity
 
-## Given Matrices
+## Question
 
-We are given:
+Given the vectors:
 
-$$
-A=\begin{pmatrix}1 & 2 \\ 0 & 1\end{pmatrix}
-$$
+- u = (1, 2, 0)
+- v = (0, 1, 3)
 
-$$
-B=\begin{pmatrix}3 & 1 \\ 2 & 4\end{pmatrix}
-$$
+Complete the following tasks:
 
-The task is to solve the matrix equation:
+1. Compute the cross product u × v.
+2. Use dot products to check whether the result is perpendicular to both vectors.
+3. Compute v × u.
+4. Compare the results of u × v and v × u.
 
-$$
-AX=B
-$$
+---
 
-## Step 1. Determine the Correct Multiplication Side
+## Solution
 
-To isolate $X$, we must multiply both sides by $A^{-1}$ from the left.
+### Step 1. Calculate the Cross Product
 
-$$
-A^{-1}AX=A^{-1}B
-$$
+Given:
 
-Since $A^{-1}A=I$, we obtain:
+```text
+u = (1, 2, 0)
+v = (0, 1, 3)
+```
 
-$$
-X=A^{-1}B
-$$
+The cross product is calculated using the determinant:
 
-The multiplication must be performed from the left because matrix multiplication is generally not commutative.
+```text
+u × v = |  i   j   k  |
+        |  1   2   0  |
+        |  0   1   3  |
+```
 
-## Step 2. Find the Inverse of A
+Expanding the determinant:
 
-First, calculate the determinant:
+```text
+u × v = i(2 × 3 - 0 × 1)
+      - j(1 × 3 - 0 × 0)
+      + k(1 × 1 - 2 × 0)
+```
 
-$$
-\det(A)=(1)(1)-(2)(0)=1
-$$
+Calculate each component:
 
-Since the determinant is nonzero, the inverse exists.
-
-Using the inverse formula:
-
-$$
-A^{-1}=\frac{1}{1}\begin{pmatrix}1 & -2 \\ 0 & 1\end{pmatrix}
-$$
-
-Therefore:
-
-$$
-A^{-1}=\begin{pmatrix}1 & -2 \\ 0 & 1\end{pmatrix}
-$$
-
-## Step 3. Calculate X
-
-Using the equation:
-
-$$
-X=A^{-1}B
-$$
-
-Substitute the matrices:
-
-$$
-X=\begin{pmatrix}1 & -2 \\ 0 & 1\end{pmatrix}\begin{pmatrix}3 & 1 \\ 2 & 4\end{pmatrix}
-$$
-
-Performing matrix multiplication:
-
-$$
-X=\begin{pmatrix}3-4 & 1-8 \\ 2 & 4\end{pmatrix}
-$$
+```text
+u × v = i(6) - j(3) + k(1)
+```
 
 Therefore:
 
-$$
-X=\begin{pmatrix}-1 & -7 \\ 2 & 4\end{pmatrix}
-$$
+```text
+u × v = (6, -3, 1)
+```
 
-## Step 4. Verify the Result
+### Step 2. Check Perpendicularity to Vector u
 
-To verify the solution, calculate $AX$:
+Two vectors are perpendicular if their dot product is zero.
 
-$$
-AX=\begin{pmatrix}1 & 2 \\ 0 & 1\end{pmatrix}\begin{pmatrix}-1 & -7 \\ 2 & 4\end{pmatrix}
-$$
+Calculate:
 
-Performing matrix multiplication:
+```text
+u · (u × v) = (1, 2, 0) · (6, -3, 1)
+```
 
-$$
-AX=\begin{pmatrix}-1+4 & -7+8 \\ 2 & 4\end{pmatrix}
-$$
+```text
+= (1 × 6) + (2 × -3) + (0 × 1)
+```
 
-Therefore:
+```text
+= 6 - 6 + 0
+= 0
+```
 
-$$
-AX=\begin{pmatrix}3 & 1 \\ 2 & 4\end{pmatrix}=B
-$$
+Therefore, the cross product is perpendicular to vector u.
 
-The result satisfies the original matrix equation.
+### Step 3. Check Perpendicularity to Vector v
 
-## Final Answer
+Calculate:
 
-$$
-\boxed{X=\begin{pmatrix}-1 & -7 \\ 2 & 4\end{pmatrix}}
-$$
+```text
+v · (u × v) = (0, 1, 3) · (6, -3, 1)
+```
 
-**Verification:**
+```text
+= (0 × 6) + (1 × -3) + (3 × 1)
+```
 
-$$
-AX=B
-$$
+```text
+= 0 - 3 + 3
+= 0
+```
+
+Therefore, the cross product is also perpendicular to vector v.
+
+### Step 4. Calculate the Reverse Cross Product
+
+Now calculate:
+
+```text
+v × u
+```
+
+Using the cross product formula:
+
+```text
+v × u = |  i   j   k  |
+        |  0   1   3  |
+        |  1   2   0  |
+```
+
+Expanding:
+
+```text
+v × u = i(1 × 0 - 3 × 2)
+      - j(0 × 0 - 3 × 1)
+      + k(0 × 2 - 1 × 1)
+```
+
+Simplifying:
+
+```text
+v × u = (-6, 3, -1)
+```
+
+### Step 5. Compare the Results
+
+We obtained:
+
+```text
+u × v = (6, -3, 1)
+
+v × u = (-6, 3, -1)
+```
+
+Comparing the two results:
+
+```text
+v × u = -(u × v)
+```
+
+The cross product is not commutative. Reversing the order of the vectors changes the direction of the result but keeps its magnitude the same.
+
+---
+
+## Final Answers
+
+**1. Cross Product:**
+
+```text
+u × v = (6, -3, 1)
+```
+
+**2. Perpendicularity Checks:**
+
+```text
+u · (u × v) = 0
+
+v · (u × v) = 0
+```
+
+The cross product is perpendicular to both original vectors.
+
+**3. Reverse Cross Product:**
+
+```text
+v × u = (-6, 3, -1)
+```
+
+**4. Comparison:**
+
+```text
+v × u = -(u × v)
+```
 
 **Conclusion:**
 
-The matrix equation was solved by multiplying both sides by $A^{-1}$ from the left.
-
-The calculated matrix satisfies $AX=B$, confirming that the solution is correct.
+The cross product produces a vector perpendicular to both original vectors. Reversing the order of the vectors changes the direction of the cross product, resulting in the negative of the original vector.
