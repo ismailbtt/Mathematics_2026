@@ -1,19 +1,25 @@
 
 # Exercise 8 – Linear Combination and Checking the Result
 
-Given:
+## Question
 
-w = (5, 1)
+Check whether w = (5, 1) can be written as:
+
+w = au + bv
+
+where:
 
 u = (1, 1)
 
 v = (2, -1)
 
-We need to check whether w can be written as:
+If so, find a and b, reconstruct w from them, and explain the geometric meaning of the existence of such coefficients.
 
-w = au + bv
+---
 
-## 1. Set Up the Equations
+## Solution
+
+### 1. Set Up the Equations
 
 Substitute the vectors into the equation:
 
@@ -27,13 +33,13 @@ Add the components:
 
 (5, 1) = (a + 2b, a - b)
 
-This gives us a system of two equations:
+This gives a system of two equations:
 
 a + 2b = 5
 
 a - b = 1
 
-## 2. Solve the System of Equations
+### 2. Solve the System of Equations
 
 From the second equation:
 
@@ -63,7 +69,7 @@ a = 1 + 4/3
 
 a = 7/3
 
-## 3. Reconstruct the Vector
+### 3. Reconstruct the Vector
 
 We found:
 
@@ -91,17 +97,21 @@ w = (5, 1)
 
 The original vector is reconstructed correctly.
 
-## 4. Geometric Interpretation
+### 4. Geometric Interpretation
 
 A linear combination means multiplying vectors by scalars and adding the resulting vectors.
 
-Here, the coefficients a and b determine how much of each vector is used.
+The coefficients a and b determine how much of each vector is used.
 
 Since we found coefficients that produce w, the vector w can be expressed as a linear combination of u and v.
 
-Geometrically, the vectors u and v span the entire plane because they are not parallel.
+The vectors u and v are not parallel because they are not scalar multiples of each other.
 
-Therefore, every vector in R² can be expressed as a linear combination of these two vectors.
+Therefore, they span the entire plane R².
+
+Every vector in R² can be expressed as a linear combination of these two vectors.
+
+---
 
 ## Final Answers
 
@@ -110,5 +120,3 @@ Therefore, every vector in R² can be expressed as a linear combination of these
 - w = (7/3)u + (4/3)v
 - Reconstructed vector: w = (5, 1)
 - The vector w can be expressed as a linear combination of u and v.
-
-
