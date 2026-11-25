@@ -1,160 +1,223 @@
 
-# Exercise 11. Parameter and Invertibility — Solution
+# Exercise 11 – Parameter and Invertibility
 
-## Given Matrix
+## Question
 
-We are given the matrix:
+Given the parameter-dependent matrix:
 
-$$
-A(t)=\begin{pmatrix}1 & t \\ t & 1\end{pmatrix}
-$$
+```text
+A(t) = | 1  t |
+       | t  1 |
+```
 
-The task is to determine all values of $t$ for which $A(t)$ is invertible and find a formula for its inverse.
+Complete the following tasks:
 
-We must also explain what happens at the excluded values.
+1. Determine all values of t for which A(t) is invertible.
+2. Find a formula for the inverse matrix A(t)^(-1).
+3. Explain what happens at the excluded values of t.
+4. Verify the inverse formula by matrix multiplication.
 
-## Step 1. Calculate the Determinant
+---
 
-For a $2 \times 2$ matrix, the determinant is:
+## Solution
 
-$$
-\det(A)=ad-bc
-$$
+### Step 1. Calculate the Determinant
+
+For a 2 × 2 matrix, the determinant is calculated using:
+
+```text
+det(A) = ad - bc
+```
 
 Applying this formula:
 
-$$
-\det(A(t))=(1)(1)-(t)(t)
-$$
+```text
+det(A(t)) = (1 × 1) - (t × t)
+```
 
 Therefore:
 
-$$
-\det(A(t))=1-t^2
-$$
+```text
+det(A(t)) = 1 - t²
+```
 
-A matrix is invertible if its determinant is nonzero.
+A matrix is invertible if its determinant is not zero.
 
 Thus:
 
-$$
-1-t^2\neq 0
-$$
+```text
+1 - t² ≠ 0
+```
 
-Factoring:
+Factor the expression:
 
-$$
-(1-t)(1+t)\neq 0
-$$
-
-Therefore:
-
-$$
-\boxed{t\neq 1 \quad \text{and} \quad t\neq -1}
-$$
-
-The matrix is invertible for all real values of $t$ except $1$ and $-1$.
-
-## Step 2. Find the Inverse Matrix
-
-The inverse formula for a $2 \times 2$ matrix is:
-
-$$
-A^{-1}=\frac{1}{ad-bc}\begin{pmatrix}d & -b \\ -c & a\end{pmatrix}
-$$
-
-Substituting the elements of $A(t)$:
-
-$$
-A(t)^{-1}=\frac{1}{1-t^2}\begin{pmatrix}1 & -t \\ -t & 1\end{pmatrix}
-$$
+```text
+(1 - t)(1 + t) ≠ 0
+```
 
 Therefore:
 
-$$
-\boxed{A(t)^{-1}=\frac{1}{1-t^2}\begin{pmatrix}1 & -t \\ -t & 1\end{pmatrix}}
-$$
+```text
+t ≠ 1
+t ≠ -1
+```
 
-This formula is valid only when $t\neq 1$ and $t\neq -1$.
+The matrix is invertible for all real values of t except 1 and -1.
 
-## Step 3. Examine the Excluded Values
+### Step 2. Find the Inverse Matrix
 
-**Case 1: When $t=1$**
+The inverse formula for a 2 × 2 matrix is:
 
-$$
-A(1)=\begin{pmatrix}1 & 1 \\ 1 & 1\end{pmatrix}
-$$
+```text
+A^(-1) = 1/(ad - bc) × |  d  -b |
+                         | -c   a |
+```
 
-Its determinant is:
+Substitute the elements of A(t):
 
-$$
-\det(A(1))=1-1=0
-$$
+```text
+A(t)^(-1) = 1/(1 - t²) × |  1  -t |
+                          | -t   1 |
+```
 
-The two rows are identical, so the matrix is not invertible.
+Therefore:
 
-**Case 2: When $t=-1$**
+```text
+A(t)^(-1) = 1/(1 - t²) × |  1  -t |
+                          | -t   1 |
+```
 
-$$
-A(-1)=\begin{pmatrix}1 & -1 \\ -1 & 1\end{pmatrix}
-$$
+This formula is valid only when:
 
-Its determinant is:
+```text
+t ≠ 1 and t ≠ -1
+```
 
-$$
-\det(A(-1))=1-(-1)^2=0
-$$
+### Step 3. Examine the Excluded Values
 
-The second row is the negative of the first row, so the matrix is not invertible.
+**Case 1: When t = 1**
 
-At both excluded values, the denominator $1-t^2$ becomes zero. Therefore, the inverse formula is undefined.
+Substitute t = 1 into the original matrix:
 
-## Step 4. Verify the Result
+```text
+A(1) = | 1  1 |
+       | 1  1 |
+```
+
+Calculate the determinant:
+
+```text
+det(A(1)) = 1 - 1²
+
+det(A(1)) = 0
+```
+
+The two rows are identical.
+
+Therefore, the matrix is not invertible.
+
+**Case 2: When t = -1**
+
+Substitute t = -1:
+
+```text
+A(-1) = |  1  -1 |
+        | -1   1 |
+```
+
+Calculate the determinant:
+
+```text
+det(A(-1)) = 1 - (-1)²
+
+det(A(-1)) = 0
+```
+
+The second row is the negative of the first row.
+
+Therefore, the matrix is not invertible.
+
+At both excluded values, the denominator 1 - t² becomes zero. Therefore, the inverse formula is undefined.
+
+### Step 4. Verify the Result
 
 To verify the inverse, calculate:
 
-$$
-A(t)A(t)^{-1}
-$$
+```text
+A(t) × A(t)^(-1)
+```
 
-Substituting:
+Substitute the matrices:
 
-$$
-A(t)A(t)^{-1}=\frac{1}{1-t^2}\begin{pmatrix}1 & t \\ t & 1\end{pmatrix}\begin{pmatrix}1 & -t \\ -t & 1\end{pmatrix}
-$$
+```text
+= 1/(1 - t²) × | 1   t | × |  1  -t |
+               | t   1 |   | -t   1 |
+```
 
-Performing matrix multiplication:
+Perform matrix multiplication:
 
-$$
-=\frac{1}{1-t^2}\begin{pmatrix}1-t^2 & 0 \\ 0 & 1-t^2\end{pmatrix}
-$$
+```text
+= 1/(1 - t²) × | (1 × 1) + (t × -t)   (1 × -t) + (t × 1) |
+               | (t × 1) + (1 × -t)   (t × -t) + (1 × 1) |
+```
 
-For $t\neq \pm 1$, simplifying gives:
+Simplify:
 
-$$
-A(t)A(t)^{-1}=\begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix}=I
-$$
+```text
+= 1/(1 - t²) × | 1 - t²    0     |
+               |    0     1 - t² |
+```
 
-This confirms that the inverse formula is correct.
+For t ≠ 1 and t ≠ -1, simplify:
+
+```text
+A(t) × A(t)^(-1) = | 1  0 |
+                   | 0  1 |
+```
+
+This is the identity matrix:
+
+```text
+A(t) × A(t)^(-1) = I
+```
+
+The inverse formula is correct.
+
+---
 
 ## Final Answer
 
-The matrix is invertible when:
+**The matrix is invertible when:**
 
-$$
-\boxed{t\in\mathbb{R}\setminus\{-1,1\}}
-$$
+```text
+t ∈ ℝ \ {-1, 1}
+```
 
-For these values, its inverse is:
+**The inverse matrix is:**
 
-$$
-\boxed{A(t)^{-1}=\frac{1}{1-t^2}\begin{pmatrix}1 & -t \\ -t & 1\end{pmatrix}}
-$$
+```text
+A(t)^(-1) = 1/(1 - t²) × |  1  -t |
+                          | -t   1 |
+```
+
+**Excluded values:**
+
+```text
+t = 1  →  det(A) = 0
+
+t = -1 →  det(A) = 0
+```
+
+**Verification:**
+
+```text
+A(t) × A(t)^(-1) = I
+```
 
 **Conclusion:**
 
-The matrix is invertible for all real values of $t$ except $t=1$ and $t=-1$.
+The matrix is invertible for all real values of t except t = 1 and t = -1.
 
 At these excluded values, the determinant becomes zero, the rows are linearly dependent, and the inverse does not exist.
 
-The inverse formula was verified by multiplication, confirming that the result is correct.
+The inverse formula was verified by matrix multiplication, confirming that the result is correct.
