@@ -1,31 +1,37 @@
 
 # Exercise 6 – Projection and Perpendicular Component
 
-Given:
+## Question
 
-u = (4, 2)
+Find the projection of u = (4, 2) onto the direction v = (1, 1).
 
-v = (1, 1)
+Then compute:
 
-We need to find the projection of u onto v, calculate the perpendicular component, and verify that the result is perpendicular to v.
+r = u - proj_v(u)
 
-## 1. Calculate the Dot Product
+Verify that r · v = 0 and explain this result geometrically.
+
+---
+
+## Solution
+
+### 1. Calculate the Dot Product
 
 Formula:
 
 u · v = x1*x2 + y1*y2
 
-Substitute the coordinates:
+Substitute:
 
 u · v = (4*1) + (2*1)
 
-u · v = 4 + 2
+= 4 + 2
 
 **Result:**
 
 u · v = 6
 
-## 2. Calculate the Length Squared of v
+### 2. Calculate the Squared Length of v
 
 Formula:
 
@@ -35,35 +41,35 @@ Substitute:
 
 ||v||² = 1² + 1²
 
-||v||² = 1 + 1
+= 2
 
 **Result:**
 
 ||v||² = 2
 
-## 3. Find the Projection of u onto v
+### 3. Find the Projection of u onto v
 
-The projection formula is:
+Projection formula:
 
 proj_v(u) = (u · v / ||v||²) * v
 
-Substitute the values:
+Substitute:
 
-proj_v(u) = (6 / 2) * (1, 1)
+proj_v(u) = (6/2) * (1, 1)
 
-proj_v(u) = 3 * (1, 1)
+= 3 * (1, 1)
 
 **Result:**
 
 proj_v(u) = (3, 3)
 
-## 4. Calculate the Perpendicular Component
+### 4. Calculate the Perpendicular Component
 
-The perpendicular component is:
+Formula:
 
 r = u - proj_v(u)
 
-Substitute the values:
+Substitute:
 
 r = (4, 2) - (3, 3)
 
@@ -71,7 +77,7 @@ r = (4, 2) - (3, 3)
 
 r = (1, -1)
 
-## 5. Verify Perpendicularity
+### 5. Verify Perpendicularity
 
 Two vectors are perpendicular if their dot product is zero.
 
@@ -79,7 +85,7 @@ Calculate:
 
 r · v = (1*1) + (-1*1)
 
-r · v = 1 - 1
+= 1 - 1
 
 **Result:**
 
@@ -87,19 +93,19 @@ r · v = 0
 
 Therefore, r is perpendicular to v.
 
-## 6. Geometric Interpretation
+### 6. Geometric Interpretation
 
 The projection (3, 3) represents the component of u in the direction of v.
 
 The vector r = (1, -1) represents the remaining component, which is perpendicular to v.
 
-Together, these two components reconstruct the original vector:
+Together, these components reconstruct the original vector:
 
 u = proj_v(u) + r
 
 (4, 2) = (3, 3) + (1, -1)
 
-This shows that every vector can be decomposed into parallel and perpendicular components relative to a given direction.
+---
 
 ## Final Answers
 
@@ -108,4 +114,3 @@ This shows that every vector can be decomposed into parallel and perpendicular c
 - Projection: proj_v(u) = (3, 3)
 - Perpendicular component: r = (1, -1)
 - Verification: r · v = 0
-
