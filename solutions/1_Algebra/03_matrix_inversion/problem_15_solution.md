@@ -1,23 +1,18 @@
 
-# Exercise 15. Two Methods for Solving the Same System — Solution
+# Exercise 15 – Two Methods for Solving the Same System
 
-## Given
+## Question
 
 We are given the system:
 
-$$
-Ax=b
-$$
+Ax = b
 
 where:
 
-$$
-A=\begin{pmatrix}2 & 1 \\ 1 & 3\end{pmatrix}
-$$
-
-$$
-b=\begin{pmatrix}7 \\ 8\end{pmatrix}
-$$
+```text
+A = [ 2  1 ]       b = [ 7 ]
+    [ 1  3 ]           [ 8 ]
+```
 
 The task is to solve the system using two methods:
 
@@ -26,175 +21,166 @@ The task is to solve the system using two methods:
 
 We will compare the methods and verify the solution.
 
-## Method 1. Using the Inverse Matrix
+## Solution
 
-### Step 1. Calculate the Determinant
+## Method 1: Using the Inverse Matrix
 
-The determinant of $A$ is:
+### Step 1: Calculate the Determinant
 
-$$
-\det(A)=(2)(3)-(1)(1)
-$$
+The determinant of A is:
 
-$$
-\det(A)=6-1=5
-$$
+det(A) = (2)(3) - (1)(1)
 
-Since $\det(A)\neq 0$, the inverse exists.
+det(A) = 6 - 1 = 5
 
-### Step 2. Find the Inverse
+Since det(A) ≠ 0, the inverse exists.
+
+### Step 2: Find the Inverse
 
 Using the inverse formula:
 
-$$
-A^{-1}=\frac{1}{5}\begin{pmatrix}3 & -1 \\ -1 & 2\end{pmatrix}
-$$
+```text
+A⁻¹ = 1/5 [  3  -1 ]
+          [ -1   2 ]
+```
 
-### Step 3. Calculate x
+### Step 3: Calculate x
 
 The solution is:
 
-$$
-x=A^{-1}b
-$$
+x = A⁻¹b
 
 Substituting:
 
-$$
-x=\frac{1}{5}\begin{pmatrix}3 & -1 \\ -1 & 2\end{pmatrix}\begin{pmatrix}7 \\ 8\end{pmatrix}
-$$
+```text
+x = 1/5 [  3  -1 ] [ 7 ]
+        [ -1   2 ] [ 8 ]
+```
 
 Performing matrix multiplication:
 
-$$
-x=\frac{1}{5}\begin{pmatrix}21-8 \\ -7+16\end{pmatrix}
-$$
+```text
+x = 1/5 [ 21 - 8 ]
+        [ -7 + 16 ]
 
-$$
-x=\frac{1}{5}\begin{pmatrix}13 \\ 9\end{pmatrix}
-$$
+x = 1/5 [ 13 ]
+        [  9 ]
+```
 
 Therefore:
 
-$$
-\boxed{x=\begin{pmatrix}\frac{13}{5} \\ \frac{9}{5}\end{pmatrix}}
-$$
+```text
+x = [ 13/5 ]
+    [  9/5 ]
+```
 
-## Method 2. Using Gaussian Elimination
+## Method 2: Using Gaussian Elimination
 
-### Step 1. Construct the Augmented Matrix
+### Step 1: Construct the Augmented Matrix
 
 The system is:
 
-$$
-2x_1+x_2=7
-$$
+2x₁ + x₂ = 7
 
-$$
-x_1+3x_2=8
-$$
+x₁ + 3x₂ = 8
 
 The augmented matrix is:
 
-$$
-\left[\begin{array}{cc|c}2 & 1 & 7 \\ 1 & 3 & 8\end{array}\right]
-$$
+```text
+[ 2  1 | 7 ]
+[ 1  3 | 8 ]
+```
 
-### Step 2. Swap the Rows
-
-Apply:
-
-$$
-R_1\leftrightarrow R_2
-$$
-
-The matrix becomes:
-
-$$
-\left[\begin{array}{cc|c}1 & 3 & 8 \\ 2 & 1 & 7\end{array}\right]
-$$
-
-### Step 3. Eliminate the First Element of Row 2
+### Step 2: Swap the Rows
 
 Apply:
 
-$$
-R_2\rightarrow R_2-2R_1
-$$
+R₁ ↔ R₂
 
 The matrix becomes:
 
-$$
-\left[\begin{array}{cc|c}1 & 3 & 8 \\ 0 & -5 & -9\end{array}\right]
-$$
+```text
+[ 1  3 | 8 ]
+[ 2  1 | 7 ]
+```
 
-Divide the second row by $-5$:
+### Step 3: Eliminate the First Element of Row 2
 
-$$
-R_2\rightarrow -\frac{1}{5}R_2
-$$
+Apply:
+
+R₂ → R₂ - 2R₁
+
+The matrix becomes:
+
+```text
+[ 1  3 |  8 ]
+[ 0 -5 | -9 ]
+```
+
+Divide the second row by -5:
+
+R₂ → (-1/5)R₂
 
 Therefore:
 
-$$
-\left[\begin{array}{cc|c}1 & 3 & 8 \\ 0 & 1 & \frac{9}{5}\end{array}\right]
-$$
+```text
+[ 1  3 |   8 ]
+[ 0  1 | 9/5 ]
+```
 
-### Step 4. Find the Solution
+### Step 4: Find the Solution
 
 Eliminate the element above the second pivot:
 
-$$
-R_1\rightarrow R_1-3R_2
-$$
+R₁ → R₁ - 3R₂
 
 The resulting matrix is:
 
-$$
-\left[\begin{array}{cc|c}1 & 0 & \frac{13}{5} \\ 0 & 1 & \frac{9}{5}\end{array}\right]
-$$
+```text
+[ 1  0 | 13/5 ]
+[ 0  1 |  9/5 ]
+```
 
 Therefore:
 
-$$
-\boxed{x_1=\frac{13}{5},\qquad x_2=\frac{9}{5}}
-$$
+x₁ = 13/5
+
+x₂ = 9/5
 
 The solution vector is:
 
-$$
-\boxed{x=\begin{pmatrix}\frac{13}{5} \\ \frac{9}{5}\end{pmatrix}}
-$$
+```text
+x = [ 13/5 ]
+    [  9/5 ]
+```
 
-## Step 5. Verify the Solution
+## Step 5: Verify the Solution
 
 To verify, substitute the result into the original equation:
 
-$$
-Ax=b
-$$
+Ax = b
 
-$$
-\begin{pmatrix}2 & 1 \\ 1 & 3\end{pmatrix}\begin{pmatrix}\frac{13}{5} \\ \frac{9}{5}\end{pmatrix}
-$$
+```text
+[ 2  1 ] [ 13/5 ] 
+[ 1  3 ] [  9/5 ]
+```
 
 Performing matrix multiplication:
 
-$$
-=\begin{pmatrix}\frac{26}{5}+\frac{9}{5} \\ \frac{13}{5}+\frac{27}{5}\end{pmatrix}
-$$
+```text
+= [ 26/5 + 9/5  ]
+  [ 13/5 + 27/5 ]
 
-$$
-=\begin{pmatrix}\frac{35}{5} \\ \frac{40}{5}\end{pmatrix}
-$$
+= [ 35/5 ]
+  [ 40/5 ]
 
-$$
-=\begin{pmatrix}7 \\ 8\end{pmatrix}=b
-$$
+= [ 7 ]
+  [ 8 ] = b
+```
 
 The solution satisfies the original system.
 
-## Step 6. Compare the Two Methods
+## Step 6: Compare the Two Methods
 
 **Inverse Matrix Method:**
 
@@ -218,15 +204,15 @@ Both methods are straightforward for this small system, but Gaussian elimination
 
 Both methods give the same solution:
 
-$$
-\boxed{x=\begin{pmatrix}\frac{13}{5} \\ \frac{9}{5}\end{pmatrix}}
-$$
+```text
+x = [ 13/5 ]
+    [  9/5 ]
+```
 
 **Verification:**
 
-$$
-Ax=\begin{pmatrix}7 \\ 8\end{pmatrix}=b
-$$
+Ax = [ 7 ] = b
+    [ 8 ]
 
 **Conclusion:**
 
