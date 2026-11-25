@@ -1,140 +1,85 @@
 
-# Exercise 12. Finding Inverses Without Starting from Scratch — Solution
+# Exercise 13 – Checking Whether Four Points Are Coplanar
 
-## Given Matrix
+## Question
 
-We are given:
+Given four points:
 
-$$
-A^{-1}=\begin{pmatrix}2 & -1 \\ -3 & 2\end{pmatrix}
-$$
+A = (0, 0, 0)
+B = (1, 2, 0)
+C = (0, 1, 1)
+D = (2, 5, 1)
 
-The task is to calculate $(3A)^{-1}$, $(A^T)^{-1}$, and $(A^2)^{-1}$ without finding the original matrix $A$.
+Determine whether the four points are coplanar.
 
-## Step 1. Calculate (3A)^{-1}
+Follow these steps:
+1. Calculate vectors AB and AC.
+2. Calculate the normal vector n = AB × AC.
+3. Calculate vector AD.
+4. Check whether AD · n = 0.
+5. Determine whether point D lies in the plane ABC.
 
-For a nonzero scalar $k$, the inverse property is:
+## Solution
 
-$$
-(kA)^{-1}=\frac{1}{k}A^{-1}
-$$
+### Step 1: Calculate vectors AB and AC
 
-Using $k=3$:
+AB = B - A
 
-$$
-(3A)^{-1}=\frac{1}{3}A^{-1}
-$$
+AB = (1 - 0, 2 - 0, 0 - 0)
 
-Substituting the given matrix:
+AB = (1, 2, 0)
 
-$$
-(3A)^{-1}=\frac{1}{3}\begin{pmatrix}2 & -1 \\ -3 & 2\end{pmatrix}
-$$
+AC = C - A
 
-Therefore:
+AC = (0 - 0, 1 - 0, 1 - 0)
 
-$$
-\boxed{(3A)^{-1}=\begin{pmatrix}\frac{2}{3} & -\frac{1}{3} \\ -1 & \frac{2}{3}\end{pmatrix}}
-$$
+AC = (0, 1, 1)
 
-## Step 2. Calculate (A^T)^{-1}
+### Step 2: Calculate the normal vector
 
-The inverse of a transpose follows the property:
+The normal vector is:
 
-$$
-(A^T)^{-1}=(A^{-1})^T
-$$
+n = AB × AC
 
-This means we transpose the given inverse matrix.
+n = (1, 2, 0) × (0, 1, 1)
 
-$$
-(A^{-1})^T=\begin{pmatrix}2 & -3 \\ -1 & 2\end{pmatrix}
-$$
+Using the cross product:
 
-Therefore:
+n = (2 × 1 - 0 × 1,
+     0 × 0 - 1 × 1,
+     1 × 1 - 2 × 0)
 
-$$
-\boxed{(A^T)^{-1}=\begin{pmatrix}2 & -3 \\ -1 & 2\end{pmatrix}}
-$$
+n = (2, -1, 1)
 
-## Step 3. Calculate (A^2)^{-1}
+### Step 3: Calculate vector AD
 
-The inverse of a product follows the property:
+AD = D - A
 
-$$
-(AB)^{-1}=B^{-1}A^{-1}
-$$
+AD = (2 - 0, 5 - 0, 1 - 0)
 
-Since $A^2=AA$, we have:
+AD = (2, 5, 1)
 
-$$
-(A^2)^{-1}=A^{-1}A^{-1}=(A^{-1})^2
-$$
+### Step 4: Calculate the dot product
 
-Substituting the given inverse matrix:
+AD · n = (2, 5, 1) · (2, -1, 1)
 
-$$
-(A^2)^{-1}=\begin{pmatrix}2 & -1 \\ -3 & 2\end{pmatrix}\begin{pmatrix}2 & -1 \\ -3 & 2\end{pmatrix}
-$$
+AD · n = (2 × 2) + (5 × -1) + (1 × 1)
 
-Performing matrix multiplication:
+AD · n = 4 - 5 + 1
 
-$$
-(A^2)^{-1}=\begin{pmatrix}4+3 & -2-2 \\ -6-6 & 3+4\end{pmatrix}
-$$
+AD · n = 0
 
-Therefore:
+### Step 5: Determine whether the points are coplanar
 
-$$
-\boxed{(A^2)^{-1}=\begin{pmatrix}7 & -4 \\ -12 & 7\end{pmatrix}}
-$$
+Since:
 
-## Step 4. Verification
+AD · n = 0
 
-We can verify the results using inverse matrix properties without calculating $A$.
+Point D lies in the plane ABC.
 
-**For $(3A)^{-1}$:**
-
-$$
-(3A)\left(\frac{1}{3}A^{-1}\right)=AA^{-1}=I
-$$
-
-**For $(A^T)^{-1}$:**
-
-$$
-A^T(A^{-1})^T=(A^{-1}A)^T=I
-$$
-
-**For $(A^2)^{-1}$:**
-
-$$
-A^2(A^{-1})^2=AAA^{-1}A^{-1}=I
-$$
-
-All three expressions produce the identity matrix, confirming the results.
+Therefore, all four points are coplanar.
 
 ## Final Answer
 
-**1. Inverse of 3A:**
+The four points A, B, C, and D are coplanar because the dot product of AD and the normal vector n is equal to zero.
 
-$$
-\boxed{(3A)^{-1}=\begin{pmatrix}\frac{2}{3} & -\frac{1}{3} \\ -1 & \frac{2}{3}\end{pmatrix}}
-$$
-
-**2. Inverse of the transpose:**
-
-$$
-\boxed{(A^T)^{-1}=\begin{pmatrix}2 & -3 \\ -1 & 2\end{pmatrix}}
-$$
-
-**3. Inverse of A squared:**
-
-$$
-\boxed{(A^2)^{-1}=\begin{pmatrix}7 & -4 \\ -12 & 7\end{pmatrix}}
-$$
-
-**Conclusion:**
-
-All three inverses were calculated using inverse matrix properties without finding the original matrix $A$.
-
-The results were verified using the identity $AA^{-1}=I$, confirming that the calculations are correct.
