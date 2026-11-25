@@ -1,15 +1,22 @@
 
 # Exercise 2 – Distance as the Length of a Vector
 
-Given two points:
+## Question
 
-A = (1, 2, 3)
+The points are A = (1, 2, 3) and B = (4, -2, 6).
 
-B = (4, -2, 6)
+1. Construct AB.
+2. Compute its length.
+3. Compute the distance between the points using the coordinate formula.
+4. Explain why both calculations give the same result.
 
-## 1. Construct the Vector AB
+---
 
-To find the vector from point A to point B, subtract the coordinates of A from the coordinates of B.
+## Solution
+
+### 1. Construct the Vector AB
+
+To find the vector from A to B, subtract the coordinates of A from B.
 
 Formula:
 
@@ -21,43 +28,43 @@ AB = (4 - 1, -2 - 2, 6 - 3)
 
 AB = (3, -4, 3)
 
-## 2. Calculate the Length of the Vector
+### 2. Calculate the Length of the Vector
 
-The length of a vector in R³ is calculated using the following formula:
+The length formula in R³ is:
 
-||AB|| = √(x² + y² + z²)
+||AB|| = sqrt(x² + y² + z²)
 
-Substitute the coordinates:
+Substitute:
 
-||AB|| = √(3² + (-4)² + 3²)
+||AB|| = sqrt(3² + (-4)² + 3²)
 
-||AB|| = √(9 + 16 + 9)
+= sqrt(9 + 16 + 9)
 
-||AB|| = √34
-
-**Result:**
-
-||AB|| = √34 ≈ 5.83
-
-## 3. Calculate the Distance Between the Points
-
-The distance formula between two points in R³ is:
-
-d(A, B) = √((x₂ - x₁)² + (y₂ - y₁)² + (z₂ - z₁)²)
-
-Substitute the coordinates:
-
-d(A, B) = √((4 - 1)² + (-2 - 2)² + (6 - 3)²)
-
-d(A, B) = √(3² + (-4)² + 3²)
-
-d(A, B) = √(9 + 16 + 9)
+= sqrt(34)
 
 **Result:**
 
-d(A, B) = √34 ≈ 5.83
+||AB|| = sqrt(34) ≈ 5.83
 
-## 4. Why Do Both Calculations Give the Same Result?
+### 3. Calculate the Distance Between the Points
+
+The distance formula is:
+
+d(A, B) = sqrt((x2-x1)² + (y2-y1)² + (z2-z1)²)
+
+Substitute:
+
+d(A, B) = sqrt((4-1)² + (-2-2)² + (6-3)²)
+
+= sqrt(3² + (-4)² + 3²)
+
+= sqrt(34)
+
+**Result:**
+
+d(A, B) = sqrt(34) ≈ 5.83
+
+### 4. Why Do Both Calculations Give the Same Result?
 
 The vector AB represents the displacement from point A to point B.
 
@@ -67,11 +74,12 @@ Therefore:
 
 d(A, B) = ||B - A||
 
-Both methods use the same coordinate differences, so they must produce the same result.
+Both methods use the same coordinate differences, so they produce the same result.
+
+---
 
 ## Final Answers
 
 - AB = (3, -4, 3)
-- Length of AB = √34 ≈ 5.83
-- Distance between A and B = √34 ≈ 5.83
-
+- Length of AB = sqrt(34) ≈ 5.83
+- Distance between A and B = sqrt(34) ≈ 5.83
