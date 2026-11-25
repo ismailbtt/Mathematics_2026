@@ -1,108 +1,172 @@
 
-# Exercise 10. Inverse of a Diagonal Matrix — Solution
+# Exercise 10 – Inverse of a Diagonal Matrix
 
-## Given Matrices
+## Question
 
-We are given two diagonal matrices:
+Given the following diagonal matrices:
 
-$$
-D=\begin{pmatrix}2 & 0 & 0 \\ 0 & -3 & 0 \\ 0 & 0 & 5\end{pmatrix}
-$$
+```text
+D = | 2   0   0 |
+    | 0  -3   0 |
+    | 0   0   5 |
 
-$$
-E=\begin{pmatrix}2 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 5\end{pmatrix}
-$$
+E = | 2   0   0 |
+    | 0   0   0 |
+    | 0   0   5 |
+```
 
-The task is to determine which matrix is invertible, find its inverse, and verify the result without using Gauss–Jordan elimination.
+Complete the following tasks:
 
-## Step 1. Determine Invertibility
+1. Determine which matrix is invertible.
+2. Find the inverse of the invertible matrix.
+3. Verify the result without using Gauss–Jordan elimination.
+
+---
+
+## Solution
+
+### Step 1. Determine Invertibility
 
 A diagonal matrix is invertible if and only if all its diagonal elements are nonzero.
 
-For matrix $D$, the determinant is:
+For matrix D, calculate the determinant:
 
-$$
-\det(D)=2(-3)(5)=-30
-$$
+```text
+det(D) = 2 × (-3) × 5
 
-Since $\det(D)\neq 0$, matrix $D$ is invertible.
+det(D) = -30
+```
 
-For matrix $E$, the determinant is:
+Since:
 
-$$
-\det(E)=2(0)(5)=0
-$$
+```text
+det(D) ≠ 0
+```
 
-Since $\det(E)=0$, matrix $E$ is not invertible.
+Matrix D is invertible.
 
-Therefore, only matrix $D$ has an inverse.
+For matrix E, calculate the determinant:
 
-## Step 2. Find the Inverse of D
+```text
+det(E) = 2 × 0 × 5
+
+det(E) = 0
+```
+
+Since:
+
+```text
+det(E) = 0
+```
+
+Matrix E is not invertible.
+
+Therefore, only matrix D has an inverse.
+
+### Step 2. Find the Inverse of D
 
 The inverse of an invertible diagonal matrix is obtained by taking the reciprocal of each diagonal element.
 
 The original matrix is:
 
-$$
-D=\begin{pmatrix}2 & 0 & 0 \\ 0 & -3 & 0 \\ 0 & 0 & 5\end{pmatrix}
-$$
+```text
+D = | 2   0   0 |
+    | 0  -3   0 |
+    | 0   0   5 |
+```
 
-Taking the reciprocals gives:
+Take the reciprocal of each diagonal element:
 
-$$
-\boxed{D^{-1}=\begin{pmatrix}\frac{1}{2} & 0 & 0 \\ 0 & -\frac{1}{3} & 0 \\ 0 & 0 & \frac{1}{5}\end{pmatrix}}
-$$
+```text
+2  →  1/2
 
-## Step 3. Verify the Result
+-3 → -1/3
 
-To verify the inverse, calculate $DD^{-1}$:
+5  →  1/5
+```
 
-$$
-DD^{-1}=\begin{pmatrix}2 & 0 & 0 \\ 0 & -3 & 0 \\ 0 & 0 & 5\end{pmatrix}\begin{pmatrix}\frac{1}{2} & 0 & 0 \\ 0 & -\frac{1}{3} & 0 \\ 0 & 0 & \frac{1}{5}\end{pmatrix}
-$$
+Therefore:
+
+```text
+D^(-1) = | 1/2    0      0   |
+         |  0    -1/3    0   |
+         |  0     0     1/5  |
+```
+
+### Step 3. Verify the Result
+
+To verify the inverse, calculate:
+
+```text
+D × D^(-1)
+```
+
+Substitute the matrices:
+
+```text
+| 2   0   0 |   | 1/2    0      0   |
+| 0  -3   0 | × |  0    -1/3    0   |
+| 0   0   5 |   |  0     0     1/5  |
+```
 
 Since both matrices are diagonal, their product is also diagonal.
 
-$$
-DD^{-1}=\begin{pmatrix}2(\frac{1}{2}) & 0 & 0 \\ 0 & (-3)(-\frac{1}{3}) & 0 \\ 0 & 0 & 5(\frac{1}{5})\end{pmatrix}
-$$
+Multiply the corresponding diagonal elements:
+
+```text
+D × D^(-1) = | 2 × 1/2       0          0      |
+             |     0      (-3) × (-1/3)  0      |
+             |     0          0       5 × 1/5  |
+```
 
 Simplifying:
 
-$$
-DD^{-1}=\begin{pmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix}=I
-$$
+```text
+D × D^(-1) = | 1   0   0 |
+             | 0   1   0 |
+             | 0   0   1 |
+```
 
-This confirms that the calculated inverse is correct.
+This is the identity matrix:
+
+```text
+D × D^(-1) = I
+```
+
+The calculated inverse is correct.
+
+---
 
 ## Final Answer
 
-Matrix $D$ is invertible because:
+**Matrix D is invertible because:**
 
-$$
-\det(D)=-30\neq 0
-$$
+```text
+det(D) = -30 ≠ 0
+```
 
-Its inverse is:
+**Its inverse is:**
 
-$$
-\boxed{D^{-1}=\begin{pmatrix}\frac{1}{2} & 0 & 0 \\ 0 & -\frac{1}{3} & 0 \\ 0 & 0 & \frac{1}{5}\end{pmatrix}}
-$$
+```text
+D^(-1) = | 1/2    0      0   |
+         |  0    -1/3    0   |
+         |  0     0     1/5  |
+```
 
-Matrix $E$ is not invertible because:
+**Matrix E is not invertible because:**
 
-$$
-\det(E)=0
-$$
+```text
+det(E) = 0
+```
 
 **Verification:**
 
-$$
-DD^{-1}=I
-$$
+```text
+D × D^(-1) = I
+```
 
 **Conclusion:**
 
-Only matrix $D$ is invertible because all its diagonal elements are nonzero. Its inverse is obtained by taking the reciprocal of each diagonal element.
+Only matrix D is invertible because all its diagonal elements are nonzero. Its inverse is obtained by taking the reciprocal of each diagonal element.
 
-Matrix $E$ has no inverse because it contains a zero diagonal element.
+Matrix E has no inverse because it contains a zero diagonal element.
