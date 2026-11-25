@@ -1,19 +1,92 @@
-## Question
 
-Normalize $v=(3,4)$, check the unit length, reconstruct $v$, and explain what normalization changes.
+# Exercise 3 – Vector Normalization
 
-## Solution
+Given:
 
-First, $\|v\|=\sqrt{3^2+4^2}=5$. Dividing by this positive length gives the unit vector
+v = (3, 4)
 
-$$e=\frac{v}{\|v\|}=\left(\frac35,\frac45\right).$$
+We need to find a unit vector e with the same direction and orientation as v.
 
-Indeed,
+## 1. Calculate the Length of the Vector
 
-$$\|e\|=\sqrt{\frac9{25}+\frac{16}{25}}=1,$$
+The length of a vector in R² is calculated using:
 
-and reconstruction yields
+||v|| = √(x² + y²)
 
-$$\|v\|e=5\left(\frac35,\frac45\right)=(3,4)=v.$$
+Substitute the coordinates:
 
-Normalization changes the length to one while preserving the direction and orientation because division is by the positive scalar $5$.
+||v|| = √(3² + 4²)
+
+||v|| = √(9 + 16)
+
+||v|| = √25
+
+**Result:**
+
+||v|| = 5
+
+## 2. Find the Unit Vector
+
+To normalize a vector, divide each component by its length.
+
+Formula:
+
+e = v / ||v||
+
+Substitute the values:
+
+e = (3/5, 4/5)
+
+**Result:**
+
+e = (3/5, 4/5)
+
+## 3. Verify That the Unit Vector Has Length 1
+
+Calculate the length of e:
+
+||e|| = √((3/5)² + (4/5)²)
+
+||e|| = √(9/25 + 16/25)
+
+||e|| = √(25/25)
+
+**Result:**
+
+||e|| = 1
+
+The vector is a unit vector.
+
+## 4. Reconstruct the Original Vector
+
+We know that:
+
+v = ||v|| * e
+
+Substitute the values:
+
+v = 5 * (3/5, 4/5)
+
+v = (3, 4)
+
+**Result:**
+
+v = (3, 4)
+
+The original vector is reconstructed correctly.
+
+## 5. Geometric Interpretation
+
+Normalization changes the length of a vector to 1 while preserving its direction and orientation.
+
+The vector becomes shorter or longer, but it still points in the same direction.
+
+The original vector has length 5, while the normalized vector has length 1.
+
+## Final Answers
+
+- Original vector: v = (3, 4)
+- Length: ||v|| = 5
+- Unit vector: e = (3/5, 4/5)
+- Verification: ||e|| = 1
+- Reconstruction: 5 * e = (3, 4)
