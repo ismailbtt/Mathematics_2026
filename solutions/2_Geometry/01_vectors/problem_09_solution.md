@@ -1,37 +1,51 @@
 
 # Exercise 9 – Cross Product as a Perpendicular Direction
 
-Given:
+## Question
+
+For:
 
 u = (1, 2, 0)
 
 v = (0, 1, 3)
 
-We need to calculate the cross product, verify perpendicularity, and compare the result with the reversed cross product.
+Compute u × v.
 
-## 1. Calculate the Cross Product u × v
+Use dot products to check perpendicularity to both vectors, compute v × u, and compare the results.
+
+---
+
+## Solution
+
+### 1. Calculate the Cross Product u × v
 
 The cross product formula is:
 
-u × v = (u2*v3 - u3*v2, u3*v1 - u1*v3, u1*v2 - u2*v1)
+u × v = (
+    u2*v3 - u3*v2,
+    u3*v1 - u1*v3,
+    u1*v2 - u2*v1
+)
 
-Substitute the coordinates:
+Substitute:
 
-u × v = (2*3 - 0*1, 0*0 - 1*3, 1*1 - 2*0)
+u × v = (
+    2*3 - 0*1,
+    0*0 - 1*3,
+    1*1 - 2*0
+)
 
-Calculate each component:
+Calculate:
 
-u × v = (6 - 0, 0 - 3, 1 - 0)
+u × v = (6, -3, 1)
 
 **Result:**
 
 u × v = (6, -3, 1)
 
-## 2. Verify That the Result Is Perpendicular to u
+### 2. Verify Perpendicularity to u
 
-Two vectors are perpendicular if their dot product equals zero.
-
-Calculate:
+Calculate the dot product:
 
 (u × v) · u = (6, -3, 1) · (1, 2, 0)
 
@@ -45,7 +59,7 @@ Calculate:
 
 Therefore, the cross product is perpendicular to u.
 
-## 3. Verify That the Result Is Perpendicular to v
+### 3. Verify Perpendicularity to v
 
 Calculate:
 
@@ -61,15 +75,15 @@ Calculate:
 
 Therefore, the cross product is also perpendicular to v.
 
-## 4. Calculate the Reversed Cross Product v × u
+### 4. Calculate the Reversed Cross Product v × u
 
 The cross product changes its sign when the order of the vectors is reversed.
 
 Formula:
 
-v × u = - (u × v)
+v × u = -(u × v)
 
-Substitute the result:
+Substitute:
 
 v × u = -(6, -3, 1)
 
@@ -77,7 +91,7 @@ v × u = -(6, -3, 1)
 
 v × u = (-6, 3, -1)
 
-## 5. Compare the Results
+### 5. Compare the Results
 
 We obtained:
 
@@ -93,13 +107,15 @@ Instead:
 
 u × v = -(v × u)
 
-## 6. Geometric Interpretation
+### 6. Geometric Interpretation
 
 The cross product produces a new vector perpendicular to both original vectors.
 
 Its direction is determined by the right-hand rule.
 
 Reversing the order of the original vectors changes the direction of the resulting vector but does not change its length.
+
+---
 
 ## Final Answers
 
@@ -108,4 +124,3 @@ Reversing the order of the original vectors changes the direction of the resulti
 - (u × v) · v = 0
 - v × u = (-6, 3, -1)
 - u × v = -(v × u)
-
