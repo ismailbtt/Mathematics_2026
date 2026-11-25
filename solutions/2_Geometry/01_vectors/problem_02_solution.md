@@ -83,3 +83,4 @@ Both methods use the same coordinate differences, so they produce the same resul
 - AB = (3, -4, 3)
 - Length of AB = sqrt(34) ≈ 5.83
 - Distance between A and B = sqrt(34) ≈ 5.83
+
